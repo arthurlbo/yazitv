@@ -1,0 +1,1 @@
+export { HeroPattern } from "./HeroPattern";

@@ -1,0 +1,62 @@
+{
+    "name": "next-typescript-template",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev --turbo",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "lint:fix": "next lint --fix",
+        "prettier": "prettier . --check",
+        "prettier:fix": "prettier . --write",
+        "format": "pnpm lint:fix && pnpm prettier:fix",
+        "cypress": "cypress open",
+        "test": "cypress run --component",
+        "type-check": "tsc --project tsconfig.json --pretty --noEmit",
+        "prepare": "husky install",
+        "commit": "git-cz"
+    },
+    "dependencies": {
+        "framer-motion": "^10.16.1",
+        "next": "13.4.16",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^17.7.1",
+        "@commitlint/config-conventional": "^17.7.0",
+        "@types/node": "20.5.0",
+        "@types/react": "18.2.20",
+        "@types/react-dom": "18.2.7",
+        "@typescript-eslint/eslint-plugin": "^6.4.1",
+        "@typescript-eslint/parser": "^6.4.1",
+        "autoprefixer": "10.4.15",
+        "commitizen": "^4.3.0",
+        "cypress": "^12.17.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "8.47.0",
+        "eslint-config-next": "13.4.16",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-import": "^2.28.1",
+        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-react": "^7.33.2",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "husky": "^8.0.3",
+        "postcss": "8.4.28",
+        "prettier": "^3.0.2",
+        "prettier-plugin-tailwindcss": "^0.5.3",
+        "tailwindcss": "3.3.3",
+        "typescript": "5.1.6"
+    },
+    "eslintConfig": {
+        "eslintConfig": {
+            "extends": "./.eslintrc.json"
+        }
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
