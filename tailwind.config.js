@@ -8,8 +8,13 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                background: "#08070b",
-                hover: "#212024",
+                background: "#0E1217",
+                hover: "#2D323B",
+                accent: "#FF2798",
+                complementary: "#772BFB",
+                primary: "#ffffff",
+                secondary: "#A8B3CF",
+                tertiary: "#70788C",
             },
             fontFamily: {
                 sans: "var(--font-poppins)",
