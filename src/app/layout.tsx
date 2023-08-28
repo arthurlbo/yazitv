@@ -2,6 +2,8 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 
+import { MainNav } from "@/components";
+
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-poppins" });
 
 export const metadata = {
@@ -13,8 +15,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body
-                className={`${poppins.variable} relative flex min-h-screen w-full max-w-full flex-col items-center justify-center overflow-x-hidden bg-background font-sans`}
+                className={`${poppins.variable} bg-background relative flex min-h-screen w-full max-w-full flex-col items-center justify-center overflow-x-hidden font-sans`}
             >
+                <MainNav />
                 {children}
             </body>
         </html>

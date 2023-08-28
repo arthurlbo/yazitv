@@ -1,10 +1,3 @@
-import { Hello, HeroPattern } from "@/components";
-
 export default function Home() {
-    return (
-        <>
-            <Hello />
-            <HeroPattern />
-        </>
-    );
+    return <h1 className="text-primary">Hello world</h1>;
 }
