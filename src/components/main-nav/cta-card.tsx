@@ -5,7 +5,7 @@ import PurpleShepre from "@/assets/purpleSphere.webp";
 
 export const CtaCard = () => {
     return (
-        <div className="relative flex h-40 max-h-40 w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl border border-hover lg:max-h-36 xl:max-h-40">
+        <div className="min-h-40 relative flex h-full max-h-40 w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl border border-hover lg:h-36 lg:max-h-36 xl:max-h-40">
             <Image
                 src={GreenShepre}
                 alt="green sphere"
