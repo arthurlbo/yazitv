@@ -16,7 +16,7 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     return (
         <div className="flex h-10 w-full items-center justify-between rounded-2xl border border-hover bg-transparent px-4">
             <div className="flex items-center gap-3">
-                <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" />
+                <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" priority />
                 <span className="text-sm font-medium text-tertiary">{name}</span>
             </div>
             <div className={`h-3 w-3 rounded-full ${isOnline ? "bg-green-500" : "bg-zinc-700"}`} />
