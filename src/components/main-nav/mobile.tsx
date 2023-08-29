@@ -1,6 +1,6 @@
 import { Menu, Search, XCircle } from "lucide-react";
 
-import { IconButton } from "@/components/ui/iconButton";
+import { IconButton } from "@/components/ui/icon-button";
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetFooter, SheetClose } from "@/components/ui/sheet";
 
 export const Mobile = () => {

@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="en">
             <body
-                className={`${poppins.variable} relative flex min-h-screen w-full max-w-full flex-col items-center justify-start overflow-x-hidden bg-background font-sans md:justify-center`}
+                className={`${poppins.variable} relative flex min-h-screen w-full max-w-full flex-col items-center justify-start overflow-x-hidden bg-background font-sans lg:justify-center`}
             >
                 <MainNav />
                 {children}
