@@ -10,9 +10,6 @@ export const MainNav = () => {
         <div
             className="
             max-w-screen
-            tall:h-full
-            tall:gap-7
-            tall:py-7
             flex
             w-full
             flex-row
@@ -37,7 +34,10 @@ export const MainNav = () => {
             lg:border-r
             lg:border-hover
             lg:px-4
-            lg:py-6"
+            lg:py-6
+            tall:h-full
+            tall:gap-7
+            tall:py-7"
         >
             <Image src={Logo} alt="Yazi.tv" priority className="h-[50px] w-[123px] lg:w-[100px]" />
             <Mobile />

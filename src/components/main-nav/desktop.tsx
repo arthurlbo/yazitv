@@ -5,7 +5,7 @@ import { Connections } from "./connections";
 
 export const Desktop = () => {
     return (
-        <div className="tall:justify-between hidden h-full w-full flex-col items-start gap-5 lg:flex">
+        <div className="hidden h-full w-full flex-col items-start gap-5 lg:flex tall:justify-between">
             <MainMenu />
             <Divider />
             <Connections />
