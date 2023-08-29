@@ -8,14 +8,14 @@ export const MainNav = () => {
     return (
         <div
             className="
-            bg-background
-            lg:border-hover
             max-w-screen
             flex
             w-full
             flex-row
             items-center
             justify-between
+            gap-5
+            bg-background
             px-5
             py-5
             lg:fixed
@@ -28,6 +28,7 @@ export const MainNav = () => {
             lg:justify-start
             lg:gap-12
             lg:border-r
+            lg:border-hover
             lg:px-4
             lg:py-12
             "
