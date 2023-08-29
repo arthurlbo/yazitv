@@ -37,7 +37,10 @@ module.exports = {
             fontFamily: {
                 sans: "var(--font-poppins)",
             },
+            screens: {
+                tall: { raw: "((min-height: 850px))" },
+            },
         },
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [require("tailwindcss-animate"), require("tailwind-scrollbar")({ nocompatible: true })],
 };
