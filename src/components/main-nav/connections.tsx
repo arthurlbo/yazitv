@@ -14,7 +14,7 @@ interface CardProps {
 
 const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     return (
-        <div className="flex h-10 w-full items-center justify-between rounded-2xl border border-hover bg-transparent px-4">
+        <div className="flex h-11 w-full items-center justify-between rounded-2xl border border-hover bg-transparent px-4 lg:h-10">
             <div className="flex items-center gap-3">
                 <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" priority />
                 <span className="text-sm font-medium text-tertiary">{name}</span>

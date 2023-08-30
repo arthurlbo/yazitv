@@ -2,7 +2,7 @@ import { Bell, LucideIcon, Menu, MessageCircle, Search, XCircle } from "lucide-r
 
 import { Avatar } from "@/components/ui/avatar";
 import { IconButton } from "@/components/ui/icon-button";
-import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetClose } from "@/components/ui/sheet";
+import { Sheet, SheetTrigger, SheetContent, SheetClose } from "@/components/ui/sheet";
 
 import { Divider } from "./divider";
 import { CtaCard } from "./cta-card";
@@ -39,22 +39,20 @@ export const Mobile = () => {
                 </SheetTrigger>
                 <SheetContent
                     side="right"
-                    className="max-w-screen flex w-full flex-col gap-5 bg-background p-5 md:max-w-[425px]"
+                    className="max-w-screen flex h-full w-full flex-col gap-5 bg-background p-5 md:max-w-[425px]"
                 >
-                    <SheetHeader>
-                        <div className="flex w-full items-center justify-between">
-                            <div className="flex items-center gap-3">
-                                <Avatar />
-                                <div className="flex flex-col items-start">
-                                    <h1 className="text-base font-normal text-primary">Arthur Lobo</h1>
-                                    <p className="text-sm font-light text-secondary">arthur@email.com</p>
-                                </div>
+                    <div className="flex w-full items-center justify-between">
+                        <div className="flex items-center gap-3">
+                            <Avatar />
+                            <div className="flex flex-col items-start">
+                                <h1 className="text-base font-normal text-primary">Arthur Lobo</h1>
+                                <p className="text-sm font-light text-secondary">arthur@email.com</p>
                             </div>
-                            <SheetClose asChild>
-                                <IconButton icon={XCircle} />
-                            </SheetClose>
                         </div>
-                    </SheetHeader>
+                        <SheetClose asChild>
+                            <IconButton icon={XCircle} />
+                        </SheetClose>
+                    </div>
                     <Divider />
                     <div className="flex h-11 w-full items-center justify-between gap-3">
                         <ActionButton label="My Messages" icon={MessageCircle} />

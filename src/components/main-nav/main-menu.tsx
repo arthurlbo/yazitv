@@ -1,6 +1,26 @@
-import { Film, Flame, Heart, Home, Layers, Rocket, Video } from "lucide-react";
+import { Film, Flame, Heart, Home, Layers, LucideIcon, Rocket, Video } from "lucide-react";
 
-import { NavButtonProps, NavButton } from "./nav-button";
+export interface NavButtonProps {
+    id: number;
+    label: string;
+    icon: LucideIcon;
+    link: string;
+}
+
+export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
+    const isActive = "/" === link;
+
+    return (
+        <button
+            className={`flex h-11 w-full items-center justify-start gap-3 rounded-2xl px-4 lg:h-10 bg-${
+                isActive ? "hover" : "transparent"
+            }`}
+        >
+            <Icon className={`h-5 w-5 text-${isActive ? "primary" : "tertiary"}`} />
+            <span className={`text-sm font-medium text-${isActive ? "primary" : "tertiary"}`}>{label}</span>
+        </button>
+    );
+};
 
 const navigationItems: NavButtonProps[] = [
     {

@@ -5,7 +5,7 @@ import PurpleShepre from "@/assets/purpleSphere.webp";
 
 export const CtaCard = () => {
     return (
-        <div className="min-h-40 relative flex h-full max-h-40 w-full flex-col items-center justify-center gap-4 overflow-hidden rounded-2xl border border-hover lg:h-36 lg:max-h-36 xl:max-h-40">
+        <div className="relative h-full max-h-40 w-full flex-none overflow-hidden rounded-2xl border border-hover lg:h-36 lg:max-h-36 xl:max-h-40">
             <Image
                 src={GreenShepre}
                 alt="green sphere"
@@ -22,10 +22,12 @@ export const CtaCard = () => {
                 height={188}
                 className="absolute -bottom-24 -right-24 z-0"
             />
-            <h1 className="z-10 text-xl font-extrabold text-primary">Explore a new world !</h1>
-            <p className="z-10 w-48 text-center text-sm font-medium text-secondary">
-                Upgrade for Personalized Content & Features
-            </p>
+            <div className="flex h-full flex-col items-center justify-center gap-4">
+                <h1 className="z-10 text-xl font-extrabold text-primary">Explore a new world !</h1>
+                <p className="z-10 w-48 text-center text-sm font-medium text-secondary">
+                    Upgrade for Personalized Content & Features
+                </p>
+            </div>
         </div>
     );
 };
