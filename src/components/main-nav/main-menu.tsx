@@ -14,10 +14,20 @@ export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
         <button
             className={`flex h-11 w-full items-center justify-start gap-3 rounded-2xl px-4 lg:h-10 bg-${
                 isActive ? "hover" : "transparent"
-            }`}
+            } group`}
         >
-            <Icon className={`h-5 w-5 text-${isActive ? "primary" : "tertiary"}`} />
-            <span className={`text-sm font-medium text-${isActive ? "primary" : "tertiary"}`}>{label}</span>
+            <Icon
+                className={`h-5 w-5 text-${
+                    isActive ? "primary" : "tertiary"
+                } transition-colors duration-200 group-hover:text-primary`}
+            />
+            <span
+                className={`text-sm font-medium text-${
+                    isActive ? "primary" : "tertiary"
+                } transition-colors duration-200 group-hover:text-primary`}
+            >
+                {label}
+            </span>
         </button>
     );
 };
