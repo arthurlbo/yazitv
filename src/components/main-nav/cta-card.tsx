@@ -30,8 +30,7 @@ export const CtaCard = () => {
             lg:h-36
             lg:max-h-36
             xl:h-44
-            xl:max-h-44
-            "
+            xl:max-h-44"
         >
             <Image
                 src={GreenShepre}
