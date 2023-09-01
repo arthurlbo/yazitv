@@ -39,7 +39,9 @@ export const MainNav = () => {
             tall:gap-7
             tall:py-7"
         >
-            <Image src={Logo} alt="Yazi.tv" priority className="h-auto w-[123px] cursor-pointer lg:w-[105px]" />
+            <a href="/">
+                <Image src={Logo} alt="Yazi.tv" priority className="h-auto w-[123px] cursor-pointer lg:w-[105px]" />
+            </a>
             <Mobile />
             <Desktop />
         </div>
