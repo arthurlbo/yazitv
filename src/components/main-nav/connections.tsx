@@ -14,13 +14,34 @@ interface CardProps {
 
 const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     return (
-        <div className="flex h-11 w-full cursor-pointer items-center justify-between rounded-2xl border border-hover bg-transparent px-4 transition-all duration-200 hover:border-tertiary lg:h-10">
+        <button
+            className="
+                flex
+                h-11
+                w-full
+                items-center
+                justify-between
+                rounded-2xl
+                border
+                border-hover
+                bg-transparent
+                px-4
+                transition-all
+                duration-200
+                hover:border-tertiary
+                focus:outline-none
+                focus:ring-2
+                focus:ring-complementary/80
+                focus:ring-offset-2
+                focus:ring-offset-background
+                lg:h-10"
+        >
             <div className="flex items-center gap-3">
                 <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" priority />
                 <span className="text-sm font-medium text-tertiary">{name}</span>
             </div>
             <div className={`h-3 w-3 rounded-full ${isOnline ? "bg-green-500" : "bg-zinc-700"}`} />
-        </div>
+        </button>
     );
 };
 

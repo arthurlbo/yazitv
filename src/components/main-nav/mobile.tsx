@@ -17,7 +17,24 @@ interface ActionButtonProps {
 
 const ActionButton = ({ icon: Icon, label, haveNotification = false }: ActionButtonProps) => {
     return (
-        <button className="flex h-full w-full items-center justify-center gap-3 rounded-full border border-hover bg-transparent">
+        <button
+            className="
+            flex
+            h-full
+            w-full
+            items-center
+            justify-center
+            gap-3
+            rounded-full
+            border
+            border-hover
+            bg-transparent
+            focus:outline-none
+            focus:ring-2
+            focus:ring-complementary/80
+            focus:ring-offset-2
+            focus:ring-offset-background"
+        >
             <div className="relative">
                 <Icon className="h-5 w-5 text-primary" />
                 {haveNotification && (

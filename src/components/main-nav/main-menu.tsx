@@ -12,7 +12,7 @@ export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
 
     return (
         <button
-            className={`flex h-11 w-full items-center justify-start gap-3 rounded-2xl px-4 lg:h-10 bg-${
+            className={`flex h-11 w-full items-center justify-start gap-3 rounded-2xl px-4 focus:outline-none focus:ring-2 focus:ring-complementary/80 focus:ring-offset-2 focus:ring-offset-background lg:h-10 bg-${
                 isActive ? "hover" : "transparent"
             } group`}
         >
