@@ -39,6 +39,7 @@ module.exports = {
             },
             screens: {
                 tall: { raw: "((min-height: 850px))" },
+                massive: { raw: "((min-width: 1600px))" },
             },
         },
     },
