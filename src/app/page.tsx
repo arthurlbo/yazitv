@@ -1,3 +1,9 @@
+import { Hero } from "@/components/content/hero";
+
 export default function Home() {
-    return <h1 className="text-primary">Hello world</h1>;
+    return (
+        <div className="flex h-full w-full flex-col items-start justify-start px-5">
+            <Hero />
+        </div>
+    );
 }
