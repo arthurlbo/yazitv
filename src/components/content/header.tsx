@@ -30,7 +30,7 @@ const SearchInput = () => {
 
 export const Header = () => {
     return (
-        <header className="hidden h-16 w-full items-center justify-between lg:flex">
+        <header className="hidden h-16 w-full items-center justify-between xl:flex">
             <SearchInput />
             <div className="flex items-center gap-9">
                 <div className="flex items-center gap-3">

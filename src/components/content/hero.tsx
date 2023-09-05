@@ -17,7 +17,7 @@ export const Hero = () => {
                     </p>
                 </div>
                 <div className="flex max-h-[270px] max-w-[full] items-center justify-center overflow-clip lg:hidden">
-                    <Image src={Movies} alt="movies" priority className="h-[550px] w-[522px] object-cover" />
+                    <Image src={Movies} alt="movies" priority className="h-[550px] w-full object-cover" />
                 </div>
                 <div className="flex w-full flex-col items-center justify-center gap-3 lg:flex-row lg:justify-start">
                     <button className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-accent to-complementary py-3 lg:w-64">
@@ -30,7 +30,12 @@ export const Hero = () => {
                     </button>
                 </div>
             </div>
-            <Image src={Movies} alt="movies" priority width={522} height={410} className="sm:hidden lg:flex" />
+            <Image
+                src={Movies}
+                alt="movies"
+                priority
+                className="hidden h-[410px] w-[450px] object-cover lg:flex xl:w-[522px]"
+            />
         </div>
     );
 };

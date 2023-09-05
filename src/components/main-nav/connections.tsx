@@ -34,7 +34,7 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
                 focus:ring-complementary/80
                 focus:ring-offset-2
                 focus:ring-offset-background
-                lg:h-10"
+                xl:h-10"
         >
             <div className="flex items-center gap-3">
                 <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" priority />

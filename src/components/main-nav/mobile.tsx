@@ -48,7 +48,7 @@ const ActionButton = ({ icon: Icon, label, haveNotification = false }: ActionBut
 
 export const Mobile = () => {
     return (
-        <div className="flex items-center gap-5 lg:hidden">
+        <div className="flex items-center gap-5 xl:hidden">
             <IconButton icon={Search} />
             <Sheet>
                 <SheetTrigger asChild>

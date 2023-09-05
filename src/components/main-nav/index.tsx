@@ -20,27 +20,27 @@ export const MainNav = () => {
             px-5
             py-5
             scrollbar-none
-            lg:fixed
-            lg:left-0
-            lg:top-0
-            lg:max-h-screen
-            lg:min-h-screen
-            lg:max-w-[292px]
-            lg:flex-col
-            lg:items-start
-            lg:justify-start
-            lg:gap-6
-            lg:overflow-y-scroll
-            lg:border-r
-            lg:border-hover
-            lg:px-4
-            lg:py-6
+            xl:fixed
+            xl:left-0
+            xl:top-0
+            xl:max-h-screen
+            xl:min-h-screen
+            xl:max-w-[292px]
+            xl:flex-col
+            xl:items-start
+            xl:justify-start
+            xl:gap-6
+            xl:overflow-y-scroll
+            xl:border-r
+            xl:border-hover
+            xl:px-4
+            xl:py-6
             tall:h-full
             tall:gap-7
             tall:py-7"
         >
             <a href="/">
-                <Image src={Logo} alt="Yazi.tv" priority className="h-auto w-[123px] cursor-pointer lg:w-[105px]" />
+                <Image src={Logo} alt="Yazi.tv" priority className="h-14 w-[123px] cursor-pointer xl:w-[105px]" />
             </a>
             <Mobile />
             <Desktop />

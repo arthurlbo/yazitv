@@ -27,8 +27,6 @@ export const CtaCard = () => {
             focus:ring-complementary/80
             focus:ring-offset-2
             focus:ring-offset-background
-            lg:h-36
-            lg:max-h-36
             xl:h-44
             xl:max-h-44"
         >

@@ -26,7 +26,7 @@ export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
                 focus:ring-complementary/80
                 focus:ring-offset-2
                 focus:ring-offset-background
-                lg:h-10
+                xl:h-10
                 bg-${isActive ? "hover" : "transparent"}
                 group`}
         >
