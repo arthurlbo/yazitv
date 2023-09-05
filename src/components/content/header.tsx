@@ -3,14 +3,15 @@ import { Bell, MessageCircle, Search } from "lucide-react";
 import { Avatar } from "../ui/avatar";
 import { IconButton } from "../ui/icon-button";
 
-const SearchInput = () => {
+export const Header = () => {
     return (
-        <div className="relative">
-            <Search className="absolute left-5 top-1/2 h-5 w-5 -translate-y-[52%] text-primary" />
-            <input
-                type="text"
-                placeholder="Search everything"
-                className="
+        <header className="hidden h-16 w-full items-center justify-between xl:flex">
+            <div className="relative">
+                <Search className="absolute left-5 top-1/2 h-5 w-5 -translate-y-[52%] text-primary" />
+                <input
+                    type="text"
+                    placeholder="Search everything"
+                    className="
                     h-12
                     w-[330px]
                     rounded-full
@@ -23,15 +24,8 @@ const SearchInput = () => {
                     hover:border-[#545b6b]
                     focus:border-secondary
                     focus:outline-none"
-            />
-        </div>
-    );
-};
-
-export const Header = () => {
-    return (
-        <header className="hidden h-16 w-full items-center justify-between xl:flex">
-            <SearchInput />
+                />
+            </div>
             <div className="flex items-center gap-9">
                 <div className="flex items-center gap-3">
                     <IconButton icon={MessageCircle} />
