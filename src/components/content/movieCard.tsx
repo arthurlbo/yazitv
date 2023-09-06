@@ -36,10 +36,10 @@ const Party = ({ title, genre }: PartyProps) => {
     const avatars = [Avatar1, Avatar2, Avatar3];
 
     return (
-        <div className="flex h-[60px] max-h-[60px] w-full items-center justify-between bg-hover px-3">
+        <div className="flex h-[60px] max-h-[60px] w-full items-center justify-between bg-hover px-3 md:h-[80px] md:max-h-[80px]">
             <div className="flex flex-col items-start">
-                <h1 className="text-sm font-bold text-primary">{title}</h1>
-                <p className="text-xs font-semibold text-secondary">{genre.join(", ")}</p>
+                <h1 className="text-sm font-bold text-primary md:text-base">{title}</h1>
+                <p className="text-xs font-semibold text-secondary md:text-sm">{genre.join(", ")}</p>
             </div>
             <div className="flex items-center -space-x-2 self-start pt-3">
                 {avatars.map((avatar, index) => (
@@ -48,7 +48,7 @@ const Party = ({ title, genre }: PartyProps) => {
                         src={avatar}
                         alt="avatar"
                         priority
-                        className="h-6 w-6 rounded-full border border-secondary"
+                        className="h-6 w-6 rounded-full border border-secondary md:h-7 md:w-7"
                     />
                 ))}
             </div>
@@ -58,7 +58,25 @@ const Party = ({ title, genre }: PartyProps) => {
 
 export const MovieCard = ({ isParty = false, progress }: MovieCardProps) => {
     return (
-        <div className="flex h-[180px] max-h-[180px] w-[280px] max-w-[280px] flex-col items-center justify-end overflow-hidden rounded-xl bg-[#1f232b] pb-px">
+        <div
+            className="
+                flex
+                max-h-[180px]
+                min-h-[180px]
+                min-w-[300px]
+                max-w-[300px]
+                flex-col
+                items-center
+                justify-end
+                overflow-hidden
+                rounded-xl
+                bg-[#1f232b]
+                pb-px
+                md:max-h-[200px]
+                md:min-h-[200px]
+                md:min-w-[340px]
+                md:max-w-[340px]"
+        >
             {progress && <Progress progress={progress} />}
             {isParty && <Party title="Spider Man" genre={["Comedy", "Drama"]} />}
         </div>
