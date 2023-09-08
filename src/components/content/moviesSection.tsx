@@ -1,7 +1,13 @@
-import { MovieCard } from "./movieCard";
-import { CarouselWrapper } from "./carouselWrapper";
+"use client";
 
-export const ContinueWatching = async () => {
+import { api } from "@/lib/api";
+import { MovieCard } from "./movieCard";
+import { MoviesWrapper } from "./moviesWrapper";
+
+export const MoviesSection = async () => {
+    const moviesData = await api.get("/movie/popular?language=pt-BR&page=1");
+    console.log("moviesData", moviesData);
+
     const items = [
         <>
             <MovieCard isParty />
@@ -26,5 +32,5 @@ export const ContinueWatching = async () => {
         </>,
     ];
 
-    return <CarouselWrapper title="Continue Watching" items={items} />;
+    return <MoviesWrapper title="Continue Watching" items={items} />;
 };

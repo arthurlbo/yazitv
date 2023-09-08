@@ -1,11 +1,11 @@
 import { LucideIcon } from "lucide-react";
 
-interface CarouselButtonProps {
+interface WrapperButtonProps {
     handleButtonClick: () => void;
     icon: LucideIcon;
 }
 
-export const CarouselButton = ({ icon: Icon, handleButtonClick }: CarouselButtonProps) => {
+export const WrapperButton = ({ icon: Icon, handleButtonClick }: WrapperButtonProps) => {
     return (
         <button
             onClick={handleButtonClick}
