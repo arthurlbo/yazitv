@@ -1,13 +1,7 @@
-"use client";
-
-import { api } from "@/lib/api";
 import { MovieCard } from "./movieCard";
-import { MoviesWrapper } from "./moviesWrapper";
+import { MoviesWrapper } from "./movies/moviesWrapper";
 
-export const MoviesSection = async () => {
-    const moviesData = await api.get("/movie/popular?language=pt-BR&page=1");
-    console.log("moviesData", moviesData);
-
+export const TrendingNowSection = async () => {
     const items = [
         <>
             <MovieCard isParty />
@@ -32,5 +26,5 @@ export const MoviesSection = async () => {
         </>,
     ];
 
-    return <MoviesWrapper title="Continue Watching" items={items} />;
+    return <MoviesWrapper title="Trending Now" items={items} />;
 };

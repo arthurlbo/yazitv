@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
+
 import { WrapperButton } from "./wrapperButton";
 
 interface MoviesWrapperProps {
