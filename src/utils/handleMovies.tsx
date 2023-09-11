@@ -46,11 +46,15 @@ export const chunkMovies = (moviesList: Movie[], chunkSize: number) => {
  * @param chunkedMovies - list of subarrays of movies
  * @returns list of MovieCard components
  */
-export const handleMovies = (chunkedMovies: Movie[][]) => {
+export const handleMovies = (chunkedMovies: Movie[][], haveProgress: boolean) => {
     const handledMovies = chunkedMovies.map((moviesList) => (
         <>
-            {moviesList.map((movie, index) => (
-                <MovieCard key={movie.id} backdrop_path={movie.backdrop_path} progress={index + 10} />
+            {moviesList.map((movie) => (
+                <MovieCard
+                    key={movie.id}
+                    backdrop_path={movie.backdrop_path}
+                    progress={haveProgress ? Math.random() * 101 : undefined}
+                />
             ))}
         </>
     ));

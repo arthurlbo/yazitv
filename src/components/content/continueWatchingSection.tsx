@@ -12,7 +12,7 @@ export const ContinueWatchingSection = async () => {
 
     const chunkedMovies = chunkMovies(movies, 5);
 
-    const handledMovies = handleMovies(chunkedMovies);
+    const handledMovies = handleMovies(chunkedMovies, true);
 
     return <MoviesWrapper title="Continue Watching" items={handledMovies} />;
 };
