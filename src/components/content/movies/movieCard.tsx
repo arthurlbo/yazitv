@@ -27,10 +27,10 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
         <div
             className="
                     flex
-                    max-h-[180px]
-                    min-h-[180px]
-                    min-w-[300px]
-                    max-w-[300px]
+                    max-h-[170px]
+                    min-h-[170px]
+                    min-w-[290px]
+                    max-w-[290px]
                     cursor-pointer
                     flex-col
                     items-center
@@ -38,6 +38,10 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
                     overflow-hidden
                     rounded-xl
                     bg-hover
+                    md:max-h-[180px]
+                    md:min-h-[180px]
+                    md:min-w-[300px]
+                    md:max-w-[300px]
                     xl:max-h-[190px]
                     xl:min-h-[190px]
                     xl:min-w-[320px]
@@ -51,16 +55,20 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
             <Image
                 src={imageSrc}
                 alt={title}
-                width={300}
-                height={180}
+                width={290}
+                height={170}
                 priority
                 onLoad={handleImageLoad}
                 className="
-                        max-h-[180px]
-                        min-h-[180px]
-                        min-w-[300px]
-                        max-w-[300px]
+                        max-h-[170px]
+                        min-h-[170px]
+                        min-w-[290px]
+                        max-w-[290px]
                         object-cover
+                        md:max-h-[180px]
+                        md:min-h-[180px]
+                        md:min-w-[300px]
+                        md:max-w-[300px]
                         xl:max-h-[190px]
                         xl:min-h-[190px]
                         xl:min-w-[320px]
@@ -80,12 +88,16 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
                 <div
                     className="
                         z-20
-                        max-h-[180px]
-                        min-h-[180px]
-                        min-w-[300px]
-                        max-w-[300px]
+                        max-h-[170px]
+                        min-h-[170px]
+                        min-w-[290px]
+                        max-w-[290px]
                         animate-pulse
                         bg-slate-600
+                        md:max-h-[180px]
+                        md:min-h-[180px]
+                        md:min-w-[300px]
+                        md:max-w-[300px]
                         xl:max-h-[190px]
                         xl:min-h-[190px]
                         xl:min-w-[320px]
