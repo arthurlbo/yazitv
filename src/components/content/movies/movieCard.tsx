@@ -10,11 +10,18 @@ import { ProgressBar } from "./progressBar";
 export interface MovieCardProps {
     isParty?: boolean;
     progress?: number;
+    title: string;
     backdrop_path: string;
 }
 
-export const MovieCard = ({ isParty = false, progress, backdrop_path }: MovieCardProps) => {
+export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: MovieCardProps) => {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+    const imageSrc = `http://image.tmdb.org/t/p/original/${backdrop_path}`;
+
+    const handleImageLoad = () => {
+        setIsImageLoaded(true);
+    };
 
     return (
         <div
@@ -24,35 +31,44 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path }: MovieCar
                     min-h-[180px]
                     min-w-[300px]
                     max-w-[300px]
+                    cursor-pointer
                     flex-col
                     items-center
                     justify-end
                     overflow-hidden
                     rounded-xl
                     bg-hover
-                    md:max-h-[200px]
-                    md:min-h-[200px]
-                    md:min-w-[340px]
-                    md:max-w-[340px]
+                    xl:max-h-[190px]
+                    xl:min-h-[190px]
+                    xl:min-w-[320px]
+                    xl:max-w-[320px]
+                    2xl:max-h-[200px]
+                    2xl:min-h-[200px]
+                    2xl:min-w-[340px]
+                    2xl:max-w-[340px]
                 "
         >
             <Image
-                src={`http://image.tmdb.org/t/p/original/${backdrop_path}`}
-                alt={`movie.title`}
+                src={imageSrc}
+                alt={title}
                 width={300}
                 height={180}
                 priority
-                onLoad={() => setIsImageLoaded(true)}
+                onLoad={handleImageLoad}
                 className="
                         max-h-[180px]
                         min-h-[180px]
                         min-w-[300px]
                         max-w-[300px]
                         object-cover
-                        md:max-h-[200px]
-                        md:min-h-[200px]
-                        md:min-w-[340px]
-                        md:max-w-[340px]
+                        xl:max-h-[190px]
+                        xl:min-h-[190px]
+                        xl:min-w-[320px]
+                        xl:max-w-[320px]
+                        2xl:max-h-[200px]
+                        2xl:min-h-[200px]
+                        2xl:min-w-[340px]
+                        2xl:max-w-[340px]
                     "
             />
 
@@ -70,10 +86,14 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path }: MovieCar
                         max-w-[300px]
                         animate-pulse
                         bg-slate-600
-                        md:max-h-[200px]
-                        md:min-h-[200px]
-                        md:min-w-[340px]
-                        md:max-w-[340px]
+                        xl:max-h-[190px]
+                        xl:min-h-[190px]
+                        xl:min-w-[320px]
+                        xl:max-w-[320px]
+                        2xl:max-h-[200px]
+                        2xl:min-h-[200px]
+                        2xl:min-w-[340px]
+                        2xl:max-w-[340px]
                     "
                 />
             )}
