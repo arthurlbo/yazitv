@@ -31,11 +31,19 @@ export interface MoviesData {
  * @returns list of subarrays of movies
  */
 export const chunkMovies = (moviesList: Movie[], chunkSize: number) => {
-    const chunkedMovies = [];
+    const chunkedMovies: Movie[][] = [];
+    const movieCount = moviesList.length;
 
-    for (let startIndex = 0; startIndex < moviesList.length; startIndex += chunkSize) {
-        const endIndex = Math.min(startIndex + chunkSize, moviesList.length);
-        chunkedMovies.push(moviesList.slice(startIndex, endIndex));
+    for (let i = 0; i < movieCount; i += chunkSize - 1) {
+        const endIndex = Math.min(i + chunkSize, movieCount);
+        const chunkedMovie = moviesList.slice(i, endIndex);
+        chunkedMovies.push(chunkedMovie);
+    }
+
+    if (chunkedMovies.length > 1) {
+        const lastChunk = chunkedMovies[chunkedMovies.length - 1];
+        const firstChunk = chunkedMovies[0];
+        lastChunk.push(firstChunk[0]);
     }
 
     return chunkedMovies;
