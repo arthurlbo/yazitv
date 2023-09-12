@@ -5,7 +5,7 @@ import { MovieCard } from "./movies/movieCard";
 import { MoviesWrapper } from "./movies/moviesWrapper";
 
 export const TrendingNowSection = async () => {
-    const url = "/trending/all/day?language=en-US&page=1";
+    const url = "/trending/all/day?include_adult=false&include_video=false&language=en-US&page=1";
 
     const {
         data: { results: movies },

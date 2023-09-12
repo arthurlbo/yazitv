@@ -17,7 +17,7 @@ export interface MovieCardProps {
 export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: MovieCardProps) => {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-    const imageSrc = `http://image.tmdb.org/t/p/original/${backdrop_path}`;
+    const imageSrc = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
     const handleImageLoad = () => {
         setIsImageLoaded(true);

@@ -5,9 +5,11 @@ import { MovieCard } from "./movies/movieCard";
 import { MoviesWrapper } from "./movies/moviesWrapper";
 
 export const ContinueWatchingSection = async () => {
+    const url = "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1";
+
     const {
         data: { results: movies },
-    } = await api.get<MoviesData>("/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=1");
+    } = await api.get<MoviesData>(url);
 
     const moviesList = movies.map((movie) => (
         <MovieCard
