@@ -1,15 +1,15 @@
-import { MovieCardProps } from "./movieCard";
+interface ProgressBarProps {
+    progress: number;
+}
 
-type ProgressProps = Omit<MovieCardProps, "party" | "backdrop_path">;
-
-export const ProgressBar = ({ progress }: ProgressProps) => {
+export const ProgressBar = ({ progress }: ProgressBarProps) => {
     return (
         <div className="h-1 w-full rounded-full bg-tertiary">
             <div
                 role="progressbar"
-                aria-label="Progresso de hábitos completados nesse dia"
+                aria-label="Progress of the watched movie"
                 aria-valuenow={progress}
-                className="h-1 rounded-full bg-[#E50914] transition-all duration-300"
+                className="h-1 rounded-full bg-[#E50914]"
                 style={{
                     width: `${progress}%`,
                 }}
