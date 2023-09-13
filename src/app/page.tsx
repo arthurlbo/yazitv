@@ -1,5 +1,6 @@
 import { Hero } from "@/components/content/hero";
 import { Header } from "@/components/content/header";
+import { Footer } from "@/components/content/footer";
 import { MyListSection } from "@/components/content/myListSection";
 import { PartiesSection } from "@/components/content/partiesSection";
 import { TopPicksSection } from "@/components/content/TopPicksSection";
@@ -16,11 +17,11 @@ export default function Home() {
             <ContinueWatchingSection />
             <TrendingNowSection />
             <PartiesSection />
-            {/*
             <MyListSection />
             <TopPicksSection />
             <NewReleasesSection />
-            <AcclaimedMoviesSection /> */}
+            <AcclaimedMoviesSection />
+            <Footer />
         </div>
     );
 }
