@@ -6,7 +6,6 @@ import Image from "next/image";
 
 import { Party } from "./party";
 import { ProgressBar } from "./progressBar";
-
 export interface MovieCardProps {
     isParty?: boolean;
     progress?: number;
@@ -16,13 +15,16 @@ export interface MovieCardProps {
 }
 
 export const MovieCard = ({ isParty = false, progress, backdrop_path, title, genres = [] }: MovieCardProps) => {
-    const [isImageLoaded, setIsImageLoaded] = useState(false);
+    const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
-    const imageSrc = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+    const [imgSrc, setImgSrc] = useState(defaultImgUrl);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     const handleImageLoad = () => {
         setIsImageLoaded(true);
     };
+
+    const showChildren = isImageLoaded && imgSrc === defaultImgUrl;
 
     return (
         <div
@@ -55,12 +57,13 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                 "
         >
             <Image
-                src={imageSrc}
+                src={imgSrc}
                 alt={title}
                 width={290}
                 height={170}
                 priority
                 onLoad={handleImageLoad}
+                onError={() => setImgSrc("/notFound.svg")}
                 className="
                         max-h-[170px]
                         min-h-[170px]
@@ -82,9 +85,9 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     "
             />
 
-            {progress && isImageLoaded && <ProgressBar progress={progress} />}
+            {progress && showChildren && <ProgressBar progress={progress} />}
 
-            {isParty && isImageLoaded && <Party title={title} genres={genres} />}
+            {isParty && showChildren && <Party title={title} genres={genres} />}
 
             {!isImageLoaded && (
                 <div
