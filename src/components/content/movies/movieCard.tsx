@@ -12,9 +12,10 @@ export interface MovieCardProps {
     progress?: number;
     title: string;
     backdrop_path: string;
+    genres?: string[];
 }
 
-export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: MovieCardProps) => {
+export const MovieCard = ({ isParty = false, progress, backdrop_path, title, genres = [] }: MovieCardProps) => {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     const imageSrc = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
@@ -26,6 +27,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
     return (
         <div
             className="
+                    relative
                     flex
                     max-h-[170px]
                     min-h-[170px]
@@ -82,7 +84,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title }: M
 
             {progress && <ProgressBar progress={progress} />}
 
-            {isParty && <Party title="Spider Man" genre={["Comedy", "Drama"]} />}
+            {isParty && <Party title={title} genres={genres} />}
 
             {!isImageLoaded && (
                 <div
