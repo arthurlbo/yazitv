@@ -8,27 +8,28 @@ export const CtaCard = () => {
         <div
             tabIndex={0}
             className="
-            group
-            relative
-            h-full
-            max-h-40
-            w-full
-            flex-none
-            cursor-pointer
-            overflow-hidden
-            rounded-2xl
-            border
-            border-hover
-            transition-all
-            duration-200
-            hover:border-tertiary
-            focus:outline-none
-            focus:ring-2
-            focus:ring-complementary/80
-            focus:ring-offset-2
-            focus:ring-offset-background
-            xl:h-44
-            xl:max-h-44"
+                group
+                relative
+                h-full
+                max-h-40
+                w-full
+                flex-none
+                cursor-pointer
+                overflow-hidden
+                rounded-2xl
+                border
+                border-hover
+                transition-all
+                duration-200
+                hover:border-tertiary
+                focus:outline-none
+                focus:ring-2
+                focus:ring-complementary/80
+                focus:ring-offset-2
+                focus:ring-offset-background
+                xl:h-44
+                xl:max-h-44
+            "
         >
             <Image
                 src={GreenShepre}

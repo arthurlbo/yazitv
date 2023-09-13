@@ -42,7 +42,8 @@ export const Hero = () => {
                             focus:ring-complementary/80
                             focus:ring-offset-2
                             focus:ring-offset-background
-                            lg:w-64"
+                            lg:w-64
+                        "
                     >
                         <Play className="h-6 w-6 fill-primary text-primary" />
                         <span className="text-base font-bold text-primary">Start Now</span>
@@ -63,7 +64,8 @@ export const Hero = () => {
                             focus:ring-complementary/80
                             focus:ring-offset-2
                             focus:ring-offset-background
-                            lg:w-36"
+                            lg:w-36
+                        "
                     >
                         <span className="text-sm font-bold text-secondary transition-opacity duration-300 group-hover:text-primary">
                             Go to My List

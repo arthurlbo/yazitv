@@ -12,6 +12,25 @@ interface CardProps {
     isOnline?: boolean;
 }
 
+const cardItems: CardProps[] = [
+    {
+        id: 1,
+        name: "Eva Jones",
+        avatar: Avatar1,
+    },
+    {
+        id: 2,
+        name: "Benjamin Smith",
+        avatar: Avatar2,
+        isOnline: false,
+    },
+    {
+        id: 3,
+        name: "Emma Smith",
+        avatar: Avatar3,
+    },
+];
+
 const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     return (
         <button
@@ -34,7 +53,8 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
                 focus:ring-complementary/80
                 focus:ring-offset-2
                 focus:ring-offset-background
-                xl:h-10"
+                xl:h-10
+            "
         >
             <div className="flex items-center gap-3">
                 <Image src={avatar} alt="avatar" width={24} height={24} className="rounded-full" priority />
@@ -45,25 +65,6 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     );
 };
 
-const cardItems: CardProps[] = [
-    {
-        id: 1,
-        name: "Eva Jones",
-        avatar: Avatar1,
-    },
-    {
-        id: 2,
-        name: "Benjamin Smith",
-        avatar: Avatar2,
-        isOnline: false,
-    },
-    {
-        id: 3,
-        name: "Emma Smith",
-        avatar: Avatar3,
-    },
-];
-
 export const Connections = () => {
     return (
         <div className="flex w-full flex-col items-start justify-start gap-5">
@@ -71,7 +72,19 @@ export const Connections = () => {
                 <span className="text-xs">connections</span>
                 <div className="group flex cursor-pointer items-center gap-0.5">
                     <span className="text-[10px] group-hover:text-secondary">see all</span>
-                    <ChevronRight className="-mt-[0.6px] h-3 w-3 text-tertiary transition-all duration-200 ease-in-out group-hover:translate-x-1 group-hover:text-secondary" />
+                    <ChevronRight
+                        className="
+                            -mt-[0.6px]
+                            h-3
+                            w-3
+                            text-tertiary
+                            transition-all
+                            duration-200
+                            ease-in-out
+                            group-hover:translate-x-1
+                            group-hover:text-secondary
+                        "
+                    />
                 </div>
             </div>
             <div className="flex w-full flex-col gap-3">

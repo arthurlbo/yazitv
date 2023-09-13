@@ -7,53 +7,6 @@ export interface NavButtonProps {
     link: string;
 }
 
-export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
-    const isActive = "/" === link;
-
-    return (
-        <button
-            className={`
-                flex
-                h-11
-                w-full
-                items-center
-                justify-start
-                gap-3
-                rounded-2xl
-                px-4
-                focus:outline-none
-                focus:ring-2
-                focus:ring-complementary/80
-                focus:ring-offset-2
-                focus:ring-offset-background
-                xl:h-10
-                bg-${isActive ? "hover" : "transparent"}
-                group`}
-        >
-            <Icon
-                className={`
-                    h-5
-                    w-5
-                    text-${isActive ? "primary" : "tertiary"}
-                    transition-colors
-                    duration-200
-                    group-hover:text-primary`}
-            />
-            <span
-                className={`
-                    text-sm
-                    font-medium
-                    text-${isActive ? "primary" : "tertiary"}
-                    transition-colors
-                    duration-200
-                    group-hover:text-primary`}
-            >
-                {label}
-            </span>
-        </button>
-    );
-};
-
 const navigationItems: NavButtonProps[] = [
     {
         id: 1,
@@ -98,6 +51,56 @@ const navigationItems: NavButtonProps[] = [
         link: "/soon",
     },
 ];
+
+export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
+    const isActive = "/" === link;
+
+    return (
+        <button
+            className={`
+                flex
+                h-11
+                w-full
+                items-center
+                justify-start
+                gap-3
+                rounded-2xl
+                px-4
+                focus:outline-none
+                focus:ring-2
+                focus:ring-complementary/80
+                focus:ring-offset-2
+                focus:ring-offset-background
+                xl:h-10
+                bg-${isActive ? "hover" : "transparent"}
+                group
+            `}
+        >
+            <Icon
+                className={`
+                    h-5
+                    w-5
+                    text-${isActive ? "primary" : "tertiary"}
+                    transition-colors
+                    duration-200
+                    group-hover:text-primary
+                `}
+            />
+            <span
+                className={`
+                    text-sm
+                    font-medium
+                    text-${isActive ? "primary" : "tertiary"}
+                    transition-colors
+                    duration-200
+                    group-hover:text-primary
+                `}
+            >
+                {label}
+            </span>
+        </button>
+    );
+};
 
 export const MainMenu = () => {
     return (

@@ -13,9 +13,9 @@ interface GenresData {
     genres: Genre[];
 }
 
-export const PartiesSection = async () => {
-    const url = "/discover/movie?include_adult=false&include_video=false&language=en-US&page=2";
+const url = "/discover/movie?include_adult=false&include_video=false&language=en-US&page=2";
 
+export const PartiesSection = async () => {
     const {
         data: { genres },
     } = await api.get<GenresData>("/genre/movie/list?language=en");

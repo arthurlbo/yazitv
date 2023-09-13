@@ -28,7 +28,8 @@ export const IconButton = ({ icon: Icon, haveNotification = false }: IconButtonP
                 focus:ring-2
                 focus:ring-complementary/80
                 focus:ring-offset-2
-                focus:ring-offset-background"
+                focus:ring-offset-background
+            "
         >
             <div className="relative">
                 <Icon className="h-5 w-5 text-primary" />

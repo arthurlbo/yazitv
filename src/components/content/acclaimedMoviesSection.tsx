@@ -4,9 +4,9 @@ import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movieCard";
 import { MoviesWrapper } from "./movies/moviesWrapper";
 
-export const AcclaimedMoviesSection = async () => {
-    const url = "/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=1";
+const url = "/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=1";
 
+export const AcclaimedMoviesSection = async () => {
     const {
         data: { results: movies },
     } = await api.get<MoviesData>(url);

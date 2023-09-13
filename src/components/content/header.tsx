@@ -12,18 +12,19 @@ export const Header = () => {
                     type="text"
                     placeholder="Search everything"
                     className="
-                    h-12
-                    w-[330px]
-                    rounded-full
-                    border
-                    border-hover
-                    bg-background
-                    pl-[52px]
-                    text-secondary
-                    placeholder:text-tertiary
-                    hover:border-[#545b6b]
-                    focus:border-secondary
-                    focus:outline-none"
+                        h-12
+                        w-[330px]
+                        rounded-full
+                        border
+                        border-hover
+                        bg-background
+                        pl-[52px]
+                        text-secondary
+                        placeholder:text-tertiary
+                        hover:border-[#545b6b]
+                        focus:border-secondary
+                        focus:outline-none
+                    "
                 />
             </div>
             <div className="flex items-center gap-9">

@@ -9,11 +9,27 @@ interface PartyProps {
     genres: string[];
 }
 
-export const Party = ({ title, genres }: PartyProps) => {
-    const avatars = [Avatar1, Avatar2, Avatar3];
+const avatars = [Avatar1, Avatar2, Avatar3];
 
+export const Party = ({ title, genres }: PartyProps) => {
     return (
-        <div className="absolute bottom-0 right-1/2 flex h-[60px] max-h-[60px] w-full translate-x-1/2 items-center justify-between bg-hover px-3 xl:h-[70px] xl:max-h-[70px]">
+        <div
+            className="
+                absolute
+                bottom-0
+                right-1/2
+                flex h-[60px]
+                max-h-[60px]
+                w-full
+                translate-x-1/2
+                items-center
+                justify-between
+                bg-hover
+                px-3
+                xl:h-[70px]
+                xl:max-h-[70px]
+            "
+        >
             <div className="flex flex-col items-start">
                 <h1 className="line-clamp-1 max-w-[200px] text-sm font-bold text-primary xl:text-base">{title}</h1>
                 <p className="line-clamp-1 max-w-[200px] text-xs font-semibold text-secondary xl:text-sm">
