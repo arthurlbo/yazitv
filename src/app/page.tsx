@@ -15,8 +15,8 @@ export default function Home() {
             <Hero />
             <ContinueWatchingSection />
             <TrendingNowSection />
-            {/*
             <PartiesSection />
+            {/*
             <MyListSection />
             <TopPicksSection />
             <NewReleasesSection />
