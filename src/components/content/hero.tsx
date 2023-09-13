@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { Play, ArrowRight } from "lucide-react";
 
-import Movies from "@/assets/banner.webp";
+import Movies from "@/assets/banner.svg";
 
 export const Hero = () => {
     return (
@@ -17,7 +17,7 @@ export const Hero = () => {
                     </p>
                 </div>
                 <div className="flex max-h-[270px] max-w-[full] items-center justify-center overflow-clip lg:hidden">
-                    <Image src={Movies} alt="movies" priority className="h-[550px] w-full object-cover" />
+                    <Image src={Movies} alt="movies" height={410} priority className="w-full" />
                 </div>
                 <div className="flex w-full flex-col items-center justify-center gap-3 lg:flex-row lg:justify-start">
                     <button
@@ -76,9 +76,10 @@ export const Hero = () => {
             </div>
             <Image
                 src={Movies}
-                alt="movies"
+                alt="Movies banner"
+                height={410}
                 priority
-                className="hidden h-[410px] w-[450px] object-cover lg:flex xl:w-[522px]"
+                className="hidden w-[450px] lg:flex xl:w-[522px]"
             />
         </div>
     );
