@@ -15,19 +15,16 @@ export const Party = ({ title, genres }: PartyProps) => {
     return (
         <div
             className="
-                absolute
-                bottom-0
-                right-1/2
-                flex h-[60px]
+                flex
                 max-h-[60px]
+                min-h-[60px]
                 w-full
-                translate-x-1/2
                 items-center
                 justify-between
                 bg-hover
                 px-3
-                xl:h-[70px]
                 xl:max-h-[70px]
+                xl:min-h-[70px]
             "
         >
             <div className="flex flex-col items-start">

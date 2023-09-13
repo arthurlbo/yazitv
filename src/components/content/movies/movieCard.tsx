@@ -29,7 +29,6 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
     return (
         <div
             className="
-                    relative
                     flex
                     max-h-[170px]
                     min-h-[170px]

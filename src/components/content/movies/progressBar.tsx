@@ -4,7 +4,7 @@ interface ProgressBarProps {
 
 export const ProgressBar = ({ progress }: ProgressBarProps) => {
     return (
-        <div className="absolute bottom-0 right-1/2 h-1 w-full translate-x-1/2 rounded-full bg-tertiary">
+        <div className="h-1 w-full rounded-full bg-tertiary">
             <div
                 role="progressbar"
                 aria-label="Progress of the watched movie"
