@@ -82,14 +82,13 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     "
             />
 
-            {progress && <ProgressBar progress={progress} />}
+            {progress && isImageLoaded && <ProgressBar progress={progress} />}
 
-            {isParty && <Party title={title} genres={genres} />}
+            {isParty && isImageLoaded && <Party title={title} genres={genres} />}
 
             {!isImageLoaded && (
                 <div
                     className="
-                        z-20
                         max-h-[170px]
                         min-h-[170px]
                         min-w-[290px]
