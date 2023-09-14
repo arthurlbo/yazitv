@@ -1,6 +1,7 @@
-### Hi there! 👋
 
 <img src="./public/cover.png" alt="readme image" />
+
+### Hi there! 👋
 
 > Embark on an immersive streaming journey with Yazi.tv, your gateway to a treasure trove of movies and TV series. Dive into a world of endless entertainment options at your fingertips, watch in real-time with friends and family, host watch parties complete with interactive chat, receive handpicked recommendations tailored to your viewing habits, and download content for offline enjoyment.
 >
@@ -20,6 +21,7 @@
 - [Shadcn/ui](https://ui.shadcn.com/)
 - [Lucide Icons](https://lucide.dev/icons/)
 - [Axios](https://axios-http.com/ptbr/docs/intro)
+- [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started)
 - [Cypress](https://www.cypress.io/)
 - [Eslint](https://eslint.org)
 - [Prettier](https://prettier.io)
@@ -108,5 +110,15 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 🎨 Figma prototype
 >
 > [Ui prototype](https://www.figma.com/file/yzxjhxvefLVnC12xks7GP0/Yazi.tv?type=design&node-id=155%3A1234&mode=design&t=yYi6Ox1iN2DVGQVq-1)
+
+## Todo
+
+- [ ] **Buy Netflix for this app to become a real platform**
+- [ ] **More information about the movie on hover card**
+- [ ] **Notifications widget**
+- [ ] **Messages widget**
+- [ ] **User's avatar menu**
+- [ ] **Page navigation**
+- [ ] **Search Input**
 
 <p align="center">Made with 🤍 by Arthur</p>
