@@ -57,7 +57,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
         >
             <Image
                 src={imgSrc}
-                alt={title}
+                alt={title || "Movie"}
                 width={290}
                 height={170}
                 priority
