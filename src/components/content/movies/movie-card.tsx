@@ -37,6 +37,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
     return (
         <div
             className="
+                    group
                     flex
                     max-h-[170px]
                     min-h-[170px]
@@ -72,24 +73,28 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                 onLoad={handleImageLoad}
                 onError={() => setImgSrc("/notFound.svg")}
                 className="
-                        max-h-[170px]
-                        min-h-[170px]
-                        min-w-[290px]
-                        max-w-[290px]
-                        object-cover
-                        md:max-h-[180px]
-                        md:min-h-[180px]
-                        md:min-w-[300px]
-                        md:max-w-[300px]
-                        xl:max-h-[190px]
-                        xl:min-h-[190px]
-                        xl:min-w-[320px]
-                        xl:max-w-[320px]
-                        2xl:max-h-[200px]
-                        2xl:min-h-[200px]
-                        2xl:min-w-[340px]
-                        2xl:max-w-[340px]
-                    "
+                    max-h-[170px]
+                    min-h-[170px]
+                    min-w-[290px]
+                    max-w-[290px]
+                    object-cover
+                    transition-all
+                    duration-300
+                    ease-in-out
+                    group-hover:scale-105
+                    md:max-h-[180px]
+                    md:min-h-[180px]
+                    md:min-w-[300px]
+                    md:max-w-[300px]
+                    xl:max-h-[190px]
+                    xl:min-h-[190px]
+                    xl:min-w-[320px]
+                    xl:max-w-[320px]
+                    2xl:max-h-[200px]
+                    2xl:min-h-[200px]
+                    2xl:min-w-[340px]
+                    2xl:max-w-[340px]
+                "
             />
 
             {progress && showChildren && <ProgressBar progress={progress} />}
