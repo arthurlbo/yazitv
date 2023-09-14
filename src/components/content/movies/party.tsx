@@ -19,6 +19,7 @@ const avatars = [Avatar1, Avatar2, Avatar3];
 export const Party = ({ title, genres }: PartyProps) => {
     return (
         <div
+            data-testid="movie-party-card"
             className="
                 relative
                 flex

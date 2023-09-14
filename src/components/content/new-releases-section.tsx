@@ -2,7 +2,7 @@ import { api } from "@/lib/api";
 
 import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movie-card";
-import { MoviesWrapper } from "./movies/movies-wrapper";
+import { MoviesSection } from "./movies/movies-section";
 
 const url = "/movie/upcoming?include_adult=false&include_video=false&language=en-US&page=1";
 
@@ -18,5 +18,5 @@ export const NewReleasesSection = async () => {
         <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
     ));
 
-    return <MoviesWrapper title="New Releases" moviesList={moviesList} />;
+    return <MoviesSection title="New Releases" moviesList={moviesList} dataTestId="new-releases-section" />;
 };

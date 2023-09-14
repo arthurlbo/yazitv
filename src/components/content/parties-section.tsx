@@ -2,7 +2,7 @@ import { api } from "@/lib/api";
 
 import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movie-card";
-import { MoviesWrapper } from "./movies/movies-wrapper";
+import { MoviesSection } from "./movies/movies-section";
 
 interface Genre {
     id: number;
@@ -44,5 +44,5 @@ export const PartiesSection = async () => {
         />
     ));
 
-    return <MoviesWrapper title="Parties" moviesList={moviesList} />;
+    return <MoviesSection title="Parties" moviesList={moviesList} dataTestId="parties-section" />;
 };

@@ -76,7 +76,10 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
  */
 export const Connections = () => {
     return (
-        <div className="flex w-full flex-col items-start justify-start gap-5">
+        <div
+            data-testid="main-nav-connections-section"
+            className="flex w-full flex-col items-start justify-start gap-5"
+        >
             <div className="flex w-full items-center justify-between px-4 font-bold uppercase text-tertiary">
                 <span className="text-xs">connections</span>
                 <div className="group flex cursor-pointer items-center gap-0.5">

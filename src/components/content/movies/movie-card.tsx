@@ -103,6 +103,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
 
             {!isImageLoaded && (
                 <div
+                    data-testid="movie-skeleton"
                     className="
                         max-h-[170px]
                         min-h-[170px]

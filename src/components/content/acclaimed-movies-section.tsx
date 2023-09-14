@@ -2,7 +2,7 @@ import { api } from "@/lib/api";
 
 import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movie-card";
-import { MoviesWrapper } from "./movies/movies-wrapper";
+import { MoviesSection } from "./movies/movies-section";
 
 const url = "/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=1";
 
@@ -18,5 +18,11 @@ export const AcclaimedMoviesSection = async () => {
         <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
     ));
 
-    return <MoviesWrapper title="Critically Acclaimed Movies" moviesList={moviesList} />;
+    return (
+        <MoviesSection
+            title="Critically Acclaimed Movies"
+            moviesList={moviesList}
+            dataTestId="acclaimed-movies-section"
+        />
+    );
 };

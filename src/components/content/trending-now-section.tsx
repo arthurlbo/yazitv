@@ -2,7 +2,7 @@ import { api } from "@/lib/api";
 
 import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movie-card";
-import { MoviesWrapper } from "./movies/movies-wrapper";
+import { MoviesSection } from "./movies/movies-section";
 
 const url = "/trending/all/day?include_adult=false&include_video=false&language=en-US&page=1";
 
@@ -18,5 +18,5 @@ export const TrendingNowSection = async () => {
         <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
     ));
 
-    return <MoviesWrapper title="Trending Now" moviesList={moviesList} />;
+    return <MoviesSection title="Trending Now" moviesList={moviesList} dataTestId="trending-now-section" />;
 };

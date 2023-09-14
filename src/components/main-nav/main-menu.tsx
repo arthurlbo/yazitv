@@ -113,7 +113,7 @@ export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
  */
 export const MainMenu = () => {
     return (
-        <div className="flex w-full flex-col items-start justify-start gap-5">
+        <div data-testid="main-nav-main-menu-section" className="flex w-full flex-col items-start justify-start gap-5">
             <span className="pl-4 text-xs font-bold uppercase text-tertiary">main menu</span>
             <div className="flex w-full flex-col items-start">
                 {navigationItems.map((item) => (

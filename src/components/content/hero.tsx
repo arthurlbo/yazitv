@@ -23,7 +23,10 @@ export const Hero = () => {
     const welcomeText = handleWelcomeText[dayPeriod];
 
     return (
-        <div className="flex w-full flex-col items-start justify-center lg:flex-row lg:items-center lg:justify-between">
+        <div
+            data-testid="hero"
+            className="flex w-full flex-col items-start justify-center lg:flex-row lg:items-center lg:justify-between"
+        >
             <div className="flex w-full max-w-full flex-col justify-center gap-11 lg:max-w-md lg:gap-12">
                 <div className="flex w-full flex-col items-start gap-3 lg:gap-7">
                     <h2 className="text-base font-bold text-secondary lg:text-xl">Discover, Watch, Repeat!</h2>

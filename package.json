@@ -12,7 +12,7 @@
         "prettier:fix": "prettier . --write",
         "format": "pnpm lint:fix && pnpm prettier:fix",
         "cypress": "cypress open",
-        "test": "cypress run --component",
+        "test": "cypress run --e2e",
         "type-check": "tsc --project tsconfig.json --pretty --noEmit",
         "prepare": "husky install",
         "commit": "git-cz"

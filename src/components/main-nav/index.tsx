@@ -11,6 +11,7 @@ import Logo from "@/assets/logo.svg";
 export const MainNav = () => {
     return (
         <div
+            data-testid="main-nav"
             className="
                 max-w-screen
                 flex

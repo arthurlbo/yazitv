@@ -1,6 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 interface IconButtonProps {
+    dataTestId?: string;
     icon: LucideIcon;
     haveNotification?: boolean;
 }
@@ -10,9 +11,10 @@ interface IconButtonProps {
  * @param icon - Icon that will be displayed on the button.
  * @param haveNotification - If the button handles with some interaction that have notifications.
  */
-export const IconButton = ({ icon: Icon, haveNotification = false }: IconButtonProps) => {
+export const IconButton = ({ dataTestId = "icon-button", icon: Icon, haveNotification = false }: IconButtonProps) => {
     return (
         <button
+            data-testid={dataTestId}
             className="
                 relative
                 flex

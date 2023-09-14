@@ -2,7 +2,7 @@ import { api } from "@/lib/api";
 
 import { MoviesData } from "./movies/movie";
 import { MovieCard } from "./movies/movie-card";
-import { MoviesWrapper } from "./movies/movies-wrapper";
+import { MoviesSection } from "./movies/movies-section";
 
 const url = "/discover/movie?include_adult=false&include_video=false&language=en-US&page=1";
 
@@ -23,5 +23,5 @@ export const ContinueWatchingSection = async () => {
         />
     ));
 
-    return <MoviesWrapper title="Continue Watching" moviesList={moviesList} />;
+    return <MoviesSection title="Continue Watching" moviesList={moviesList} dataTestId="continue-watching-section" />;
 };

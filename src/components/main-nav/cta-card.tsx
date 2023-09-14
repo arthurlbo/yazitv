@@ -9,6 +9,7 @@ import PurpleShepre from "@/assets/purpleSphere.webp";
 export const CtaCard = () => {
     return (
         <div
+            data-testid="main-nav-cta-card"
             tabIndex={0}
             className="
                 group

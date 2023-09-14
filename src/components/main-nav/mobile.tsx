@@ -10,6 +10,7 @@ import { MainMenu } from "./main-menu";
 import { Connections } from "./connections";
 
 interface ActionButtonProps {
+    dataTestId: string;
     label: string;
     icon: LucideIcon;
     haveNotification?: boolean;
@@ -21,9 +22,10 @@ interface ActionButtonProps {
  * @param icon - Icon that will be displayed on the button.
  * @param haveNotification - If the user's interaction have notification.
  */
-const InteractionButton = ({ icon: Icon, label, haveNotification = false }: ActionButtonProps) => {
+const InteractionButton = ({ dataTestId, icon: Icon, label, haveNotification = false }: ActionButtonProps) => {
     return (
         <button
+            data-testid={dataTestId}
             className="
                 flex
                 h-full
@@ -58,17 +60,18 @@ const InteractionButton = ({ icon: Icon, label, haveNotification = false }: Acti
  */
 export const Mobile = () => {
     return (
-        <div className="flex items-center gap-5 xl:hidden">
-            <IconButton icon={Search} />
+        <div data-testid="main-nav-mobile" className="flex items-center gap-5 xl:hidden">
+            <IconButton dataTestId="search-button" icon={Search} />
             <Sheet>
                 <SheetTrigger asChild>
-                    <IconButton icon={Menu} />
+                    <IconButton dataTestId="drawer-button" icon={Menu} />
                 </SheetTrigger>
                 <SheetContent
+                    data-testid="drawer-content"
                     side="right"
                     className="max-w-screen flex h-full w-full flex-col gap-5 bg-background p-5 md:max-w-[425px]"
                 >
-                    <div className="flex w-full items-center justify-between">
+                    <div data-testid="drawer-header" className="flex w-full items-center justify-between">
                         <div className="flex items-center gap-3">
                             <Avatar />
                             <div className="flex flex-col items-start">
@@ -77,14 +80,23 @@ export const Mobile = () => {
                             </div>
                         </div>
                         <SheetClose asChild>
-                            <IconButton icon={XCircle} />
+                            <IconButton dataTestId="drawer-close-button" icon={XCircle} />
                         </SheetClose>
                     </div>
                     <Divider />
                     <div className="flex h-11 w-full items-center justify-between gap-3">
-                        <InteractionButton label="My Messages" icon={MessageCircle} />
+                        <InteractionButton
+                            dataTestId="interaction-button-my-messages"
+                            label="My Messages"
+                            icon={MessageCircle}
+                        />
                         <div className="h-11 w-px bg-hover" />
-                        <InteractionButton label="Notifications" icon={Bell} haveNotification />
+                        <InteractionButton
+                            dataTestId="interaction-button-notifications"
+                            label="Notifications"
+                            icon={Bell}
+                            haveNotification
+                        />
                     </div>
                     <Divider />
                     <MainMenu />

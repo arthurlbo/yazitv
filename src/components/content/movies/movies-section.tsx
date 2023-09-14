@@ -6,7 +6,8 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { WrapperButton } from "./wrapper-button";
 
-interface MoviesWrapperProps {
+interface MoviesSectionProps {
+    dataTestId?: string;
     title: string;
     moviesList: JSX.Element[];
 }
@@ -16,7 +17,7 @@ interface MoviesWrapperProps {
  * @param title - Title of the movies list.
  * @param moviesList - Cards of movies.
  */
-export const MoviesWrapper = ({ title, moviesList }: MoviesWrapperProps) => {
+export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,15 +59,18 @@ export const MoviesWrapper = ({ title, moviesList }: MoviesWrapperProps) => {
     };
 
     return (
-        <div className="flex w-full flex-col items-start gap-8">
+        <div data-testid={dataTestId || "movies-section"} className="flex w-full flex-col items-start gap-8">
             <div className="flex w-full items-center justify-between">
-                <h1 className="pl-1 text-xl font-semibold text-primary md:text-2xl">{title}</h1>
+                <h1 data-testid="movies-section-title" className="pl-1 text-xl font-semibold text-primary md:text-2xl">
+                    {title}
+                </h1>
                 <div className="hidden items-center gap-3 md:flex">
-                    <WrapperButton icon={ArrowLeft} handleButtonClick={handlePrevClick} />
-                    <WrapperButton icon={ArrowRight} handleButtonClick={handleNextClick} />
+                    <WrapperButton dataTestId="next-button" icon={ArrowLeft} handleButtonClick={handlePrevClick} />
+                    <WrapperButton dataTestId="previous-button" icon={ArrowRight} handleButtonClick={handleNextClick} />
                 </div>
             </div>
             <div
+                data-testid="movies-list"
                 ref={containerRef}
                 className="flex w-full max-w-full items-center justify-between gap-5 overflow-x-scroll scrollbar-none"
                 style={{ scrollBehavior: "smooth" }}

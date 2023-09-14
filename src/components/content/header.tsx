@@ -8,7 +8,7 @@ import { IconButton } from "../ui/icon-button";
  */
 export const Header = () => {
     return (
-        <header className="hidden h-16 w-full items-center justify-between xl:flex">
+        <header data-testid="header" className="hidden h-16 w-full items-center justify-between xl:flex">
             <div className="relative">
                 <Search className="absolute left-5 top-1/2 h-5 w-5 -translate-y-[52%] text-primary" />
                 <input

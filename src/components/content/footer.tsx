@@ -24,7 +24,10 @@ const socialItems = [
  */
 export const Footer = () => {
     return (
-        <div className="flex w-full flex-col items-center justify-center gap-5 bg-background md:flex-row md:gap-9">
+        <div
+            data-testid="footer"
+            className="flex w-full flex-col items-center justify-center gap-5 bg-background md:flex-row md:gap-9"
+        >
             <div className="flex items-center gap-3">
                 {socialItems.map((item, index) => (
                     <Link

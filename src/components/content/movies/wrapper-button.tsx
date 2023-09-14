@@ -1,6 +1,7 @@
 import { LucideIcon } from "lucide-react";
 
 interface WrapperButtonProps {
+    dataTestId: string;
     handleButtonClick: () => void;
     icon: LucideIcon;
 }
@@ -10,9 +11,10 @@ interface WrapperButtonProps {
  * @param icon - Icon to be displayed.
  * @param handleButtonClick - Function to be called when the button is clicked.
  */
-export const WrapperButton = ({ icon: Icon, handleButtonClick }: WrapperButtonProps) => {
+export const WrapperButton = ({ icon: Icon, handleButtonClick, dataTestId }: WrapperButtonProps) => {
     return (
         <button
+            data-testid={dataTestId}
             onClick={handleButtonClick}
             className="
                 flex
