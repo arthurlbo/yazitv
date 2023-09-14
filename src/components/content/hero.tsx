@@ -1,8 +1,6 @@
-import Image from "next/image";
-
 import { Play, ArrowRight } from "lucide-react";
 
-import Movies from "@/assets/banner.svg";
+import { MoviesBanner } from "../ui/movies-banner";
 
 type DayPeriods = "morning" | "afternoon" | "night";
 
@@ -36,8 +34,8 @@ export const Hero = () => {
                         More. Your Ultimate Streaming Destination Awaits!
                     </p>
                 </div>
-                <div className="flex max-h-[270px] max-w-[full] items-center justify-center overflow-clip lg:hidden">
-                    <Image src={Movies} alt="movies" height={410} priority className="w-full" />
+                <div className="flex max-h-[270px] max-w-[full] items-center justify-center overflow-clip rounded-xl lg:hidden">
+                    <MoviesBanner />
                 </div>
                 <div className="flex w-full flex-col items-center justify-center gap-3 lg:flex-row lg:justify-start">
                     <button
@@ -94,13 +92,9 @@ export const Hero = () => {
                     </button>
                 </div>
             </div>
-            <Image
-                src={Movies}
-                alt="Movies banner"
-                height={410}
-                priority
-                className="hidden w-[450px] lg:flex xl:w-[522px]"
-            />
+            <div className="hidden max-h-[410px] w-[450px] rounded-xl lg:flex xl:w-[522px]">
+                <MoviesBanner />
+            </div>
         </div>
     );
 };
