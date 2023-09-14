@@ -4,16 +4,30 @@ import { Play, ArrowRight } from "lucide-react";
 
 import Movies from "@/assets/banner.svg";
 
+type DayPeriods = "morning" | "afternoon" | "night";
+
+const handleWelcomeText: { [key in DayPeriods]: string } = {
+    morning: "Good morning",
+    afternoon: "Good afternoon",
+    night: "Good night",
+};
+
 /**
  * Page's hero component.
  */
 export const Hero = () => {
+    const hours = new Date().getHours();
+
+    const dayPeriod = hours < 12 ? "morning" : hours < 18 ? "afternoon" : "night";
+
+    const welcomeText = handleWelcomeText[dayPeriod];
+
     return (
         <div className="flex w-full flex-col items-start justify-center lg:flex-row lg:items-center lg:justify-between">
             <div className="flex w-full max-w-full flex-col justify-center gap-11 lg:max-w-md lg:gap-12">
                 <div className="flex w-full flex-col items-start gap-3 lg:gap-7">
                     <h2 className="text-base font-bold text-secondary lg:text-xl">Discover, Watch, Repeat!</h2>
-                    <h1 className="text-2xl font-extrabold text-primary lg:text-3xl">Good nigth Arthur 👋</h1>
+                    <h1 className="text-2xl font-extrabold text-primary lg:text-3xl">{`${welcomeText} Arthur 👋`}</h1>
                     <p className="text-base font-medium leading-relaxed tracking-wide text-secondary">
                         Immerse Yourself in Infinite Entertainment on Yazi.tv! Explore a Universe of Movies, Series, and
                         More. Your Ultimate Streaming Destination Awaits!
