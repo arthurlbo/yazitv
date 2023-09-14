@@ -20,6 +20,7 @@ export const Party = ({ title, genres }: PartyProps) => {
     return (
         <div
             className="
+                relative
                 flex
                 max-h-[60px]
                 min-h-[60px]
