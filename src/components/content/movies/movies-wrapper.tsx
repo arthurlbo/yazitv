@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { WrapperButton } from "./wrapperButton";
+import { WrapperButton } from "./wrapper-button";
 
 interface MoviesWrapperProps {
     title: string;

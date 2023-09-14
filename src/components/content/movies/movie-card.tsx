@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { Party } from "./party";
-import { ProgressBar } from "./progressBar";
+import { ProgressBar } from "./progress-bar";
 export interface MovieCardProps {
     isParty?: boolean;
     progress?: number;

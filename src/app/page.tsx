@@ -1,13 +1,13 @@
 import { Hero } from "@/components/content/hero";
 import { Header } from "@/components/content/header";
 import { Footer } from "@/components/content/footer";
-import { MyListSection } from "@/components/content/myListSection";
-import { PartiesSection } from "@/components/content/partiesSection";
-import { TopPicksSection } from "@/components/content/TopPicksSection";
-import { TrendingNowSection } from "@/components/content/trendingNowSection";
-import { NewReleasesSection } from "@/components/content/newReleasesSection";
-import { AcclaimedMoviesSection } from "@/components/content/acclaimedMoviesSection";
-import { ContinueWatchingSection } from "@/components/content/continueWatchingSection";
+import { MyListSection } from "@/components/content/my-list-section";
+import { PartiesSection } from "@/components/content/parties-section";
+import { TopPicksSection } from "@/components/content/top-picks-section";
+import { TrendingNowSection } from "@/components/content/trending-now-section";
+import { NewReleasesSection } from "@/components/content/new-releases-section";
+import { AcclaimedMoviesSection } from "@/components/content/acclaimed-movies-section";
+import { ContinueWatchingSection } from "@/components/content/continue-watching-section";
 
 export default function Home() {
     return (
