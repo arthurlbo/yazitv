@@ -6,6 +6,9 @@ import { MoviesWrapper } from "./movies/moviesWrapper";
 
 const url = "/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=1";
 
+/**
+ * Section that displays the critically acclaimed movies.
+ */
 export const AcclaimedMoviesSection = async () => {
     const {
         data: { results: movies },

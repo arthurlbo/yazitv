@@ -14,6 +14,14 @@ export interface MovieCardProps {
     genres?: string[];
 }
 
+/**
+ * Movie Card Component
+ * @param isParty - Indicates if the movie was watched in the party mode.
+ * @param progress - Indicates the progress of the movie if was watched.
+ * @param backdrop_path - Cover of the movie.
+ * @param title - Title of the movie.
+ * @param genres - Genres of the movie.
+ */
 export const MovieCard = ({ isParty = false, progress, backdrop_path, title, genres = [] }: MovieCardProps) => {
     const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 

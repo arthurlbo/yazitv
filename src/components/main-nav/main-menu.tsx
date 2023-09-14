@@ -52,6 +52,12 @@ const navigationItems: NavButtonProps[] = [
     },
 ];
 
+/**
+ * Button component for the user navigate in the app.
+ * @param icon - Icon to be displayed in the button.
+ * @param label - Label of the button.
+ * @param link - Link that the user will be navigated to when clicking in the button.
+ */
 export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
     const isActive = "/" === link;
 
@@ -102,6 +108,9 @@ export const NavButton = ({ icon: Icon, label, link }: NavButtonProps) => {
     );
 };
 
+/**
+ * Menu that contains the main navigation buttons in the main-nav.
+ */
 export const MainMenu = () => {
     return (
         <div className="flex w-full flex-col items-start justify-start gap-5">

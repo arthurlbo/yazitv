@@ -15,7 +15,13 @@ interface ActionButtonProps {
     haveNotification?: boolean;
 }
 
-const ActionButton = ({ icon: Icon, label, haveNotification = false }: ActionButtonProps) => {
+/**
+ * Button that handle with some user's interactions in the app (notifications and messages).
+ * @param label - The label of the button.
+ * @param icon - Icon that will be displayed on the button.
+ * @param haveNotification - If the user's interaction have notification.
+ */
+const InteractionButton = ({ icon: Icon, label, haveNotification = false }: ActionButtonProps) => {
     return (
         <button
             className="
@@ -47,6 +53,9 @@ const ActionButton = ({ icon: Icon, label, haveNotification = false }: ActionBut
     );
 };
 
+/**
+ * Drawer that will be displayed on the main-nav of mobile devices.
+ */
 export const Mobile = () => {
     return (
         <div className="flex items-center gap-5 xl:hidden">
@@ -73,9 +82,9 @@ export const Mobile = () => {
                     </div>
                     <Divider />
                     <div className="flex h-11 w-full items-center justify-between gap-3">
-                        <ActionButton label="My Messages" icon={MessageCircle} />
+                        <InteractionButton label="My Messages" icon={MessageCircle} />
                         <div className="h-11 w-px bg-hover" />
-                        <ActionButton label="Notifications" icon={Bell} haveNotification />
+                        <InteractionButton label="Notifications" icon={Bell} haveNotification />
                     </div>
                     <Divider />
                     <MainMenu />

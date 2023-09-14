@@ -5,6 +5,11 @@ interface WrapperButtonProps {
     icon: LucideIcon;
 }
 
+/**
+ * Button component for handle with the slider in the moviesWrapper component.
+ * @param icon - Icon to be displayed.
+ * @param handleButtonClick - Function to be called when the button is clicked.
+ */
 export const WrapperButton = ({ icon: Icon, handleButtonClick }: WrapperButtonProps) => {
     return (
         <button

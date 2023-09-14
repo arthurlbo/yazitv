@@ -3,6 +3,9 @@ import { Bell, MessageCircle, Search } from "lucide-react";
 import { Avatar } from "../ui/avatar";
 import { IconButton } from "../ui/icon-button";
 
+/**
+ * Page's header component.
+ */
 export const Header = () => {
     return (
         <header className="hidden h-16 w-full items-center justify-between xl:flex">

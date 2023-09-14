@@ -31,6 +31,12 @@ const cardItems: CardProps[] = [
     },
 ];
 
+/**
+ * Card component for the user's connections.
+ * @param name - Name of the connection.
+ * @param avatar - Avatar of the connection.
+ * @param isOnline - If the connection is online or not.
+ */
 const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     return (
         <button
@@ -65,6 +71,9 @@ const Card = ({ name, avatar, isOnline = true }: CardProps) => {
     );
 };
 
+/**
+ * Section in the main nav that displays the first 3 user's connections.
+ */
 export const Connections = () => {
     return (
         <div className="flex w-full flex-col items-start justify-start gap-5">

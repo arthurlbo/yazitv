@@ -5,6 +5,11 @@ interface IconButtonProps {
     haveNotification?: boolean;
 }
 
+/**
+ * Icon button component.
+ * @param icon - Icon that will be displayed on the button.
+ * @param haveNotification - If the button handles with some interaction that have notifications.
+ */
 export const IconButton = ({ icon: Icon, haveNotification = false }: IconButtonProps) => {
     return (
         <button

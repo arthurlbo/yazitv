@@ -15,6 +15,9 @@ interface GenresData {
 
 const url = "/discover/movie?include_adult=false&include_video=false&language=en-US&page=2";
 
+/**
+ * Section that displays the movies watched in party mode.
+ */
 export const PartiesSection = async () => {
     const {
         data: { genres },

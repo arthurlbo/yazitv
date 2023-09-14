@@ -5,6 +5,9 @@ import { Desktop } from "./desktop";
 
 import Logo from "@/assets/logo.svg";
 
+/**
+ * Main navigation of the app, sidebar for desktop devices and a drawer for the mobile.
+ */
 export const MainNav = () => {
     return (
         <div

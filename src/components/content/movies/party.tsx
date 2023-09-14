@@ -11,6 +11,11 @@ interface PartyProps {
 
 const avatars = [Avatar1, Avatar2, Avatar3];
 
+/**
+ * Component that displays the party information when the movie was watched in the party mode.
+ * @param title - Title of the movie.
+ * @param genres - Genres of the movie.
+ */
 export const Party = ({ title, genres }: PartyProps) => {
     return (
         <div

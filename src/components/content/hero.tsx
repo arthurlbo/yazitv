@@ -4,6 +4,9 @@ import { Play, ArrowRight } from "lucide-react";
 
 import Movies from "@/assets/banner.svg";
 
+/**
+ * Page's hero component.
+ */
 export const Hero = () => {
     return (
         <div className="flex w-full flex-col items-start justify-center lg:flex-row lg:items-center lg:justify-between">

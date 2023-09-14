@@ -11,11 +11,21 @@ interface MoviesWrapperProps {
     moviesList: JSX.Element[];
 }
 
+/**
+ * Component that wraps the movies list in a slider and separates them into sections.
+ * @param title - Title of the movies list.
+ * @param moviesList - Cards of movies.
+ */
 export const MoviesWrapper = ({ title, moviesList }: MoviesWrapperProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+    /**
+     * Function that scrolls the movies list.
+     * @param cards - Number of cards to scroll.
+     * @param direction - Direction to scroll.
+     */
     const scrollByCards = (cards: number, direction: number) => {
         const scrollableContainer = containerRef.current;
         if (scrollableContainer) {

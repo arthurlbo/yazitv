@@ -3,6 +3,9 @@ import Image from "next/image";
 import GreenShepre from "@/assets/greenSphere.webp";
 import PurpleShepre from "@/assets/purpleSphere.webp";
 
+/**
+ * Cta card component of the main-nav.
+ */
 export const CtaCard = () => {
     return (
         <div
