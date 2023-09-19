@@ -21,13 +21,16 @@ export const Party = ({ title, genres }: PartyProps) => {
         <div
             data-testid="movie-party-card"
             className="
-                relative
+                absolute
+                bottom-0
+                left-0
                 flex
                 max-h-[60px]
                 min-h-[60px]
                 w-full
                 items-center
                 justify-between
+                rounded-b-xl
                 bg-hover
                 px-3
                 xl:max-h-[70px]
