@@ -5,7 +5,9 @@ import { useState } from "react";
 import Image from "next/image";
 
 import { Party } from "./party";
+import { Skeleton } from "./skeleton";
 import { ProgressBar } from "./progress-bar";
+import { MovieInformation } from "./movie-information";
 export interface MovieCardProps {
     isParty?: boolean;
     progress?: number;
@@ -38,6 +40,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
         <div
             className="
                     group
+                    relative
                     flex
                     max-h-[170px]
                     min-h-[170px]
@@ -50,6 +53,9 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     overflow-hidden
                     rounded-xl
                     bg-hover
+                    transition-all
+                    duration-300
+                    ease-in-out
                     md:max-h-[180px]
                     md:min-h-[180px]
                     md:min-w-[300px]
@@ -72,7 +78,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                 priority
                 onLoad={handleImageLoad}
                 onError={() => setImgSrc("/notFound.svg")}
-                className="
+                className={`
                     max-h-[170px]
                     min-h-[170px]
                     min-w-[290px]
@@ -80,8 +86,10 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     object-cover
                     transition-all
                     duration-300
+                    ${isParty ? "rounded-b-2xl" : "none"}
                     ease-in-out
                     group-hover:scale-105
+                    group-hover:opacity-20
                     md:max-h-[180px]
                     md:min-h-[180px]
                     md:min-w-[300px]
@@ -94,38 +102,16 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     2xl:min-h-[200px]
                     2xl:min-w-[340px]
                     2xl:max-w-[340px]
-                "
+                `}
             />
+
+            <MovieInformation title={title} isParty={isParty} isProgress={!!progress} />
 
             {progress && showChildren && <ProgressBar progress={progress} />}
 
             {isParty && showChildren && <Party title={title} genres={genres} />}
 
-            {!isImageLoaded && (
-                <div
-                    data-testid="movie-skeleton"
-                    className="
-                        max-h-[170px]
-                        min-h-[170px]
-                        min-w-[290px]
-                        max-w-[290px]
-                        animate-pulse
-                        bg-slate-600
-                        md:max-h-[180px]
-                        md:min-h-[180px]
-                        md:min-w-[300px]
-                        md:max-w-[300px]
-                        xl:max-h-[190px]
-                        xl:min-h-[190px]
-                        xl:min-w-[320px]
-                        xl:max-w-[320px]
-                        2xl:max-h-[200px]
-                        2xl:min-h-[200px]
-                        2xl:min-w-[340px]
-                        2xl:max-w-[340px]
-                    "
-                />
-            )}
+            {!isImageLoaded && <Skeleton />}
         </div>
     );
 };
