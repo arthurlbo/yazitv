@@ -9,9 +9,9 @@ import { Skeleton } from "./skeleton";
 import { ProgressBar } from "./progress-bar";
 import { MovieInformation } from "./movie-information";
 export interface MovieCardProps {
+    title: string;
     isParty?: boolean;
     progress?: number;
-    title: string;
     backdrop_path: string;
     genres?: string[];
 }
@@ -73,38 +73,21 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
             <Image
                 src={imgSrc}
                 alt={title || "Movie"}
-                width={290}
-                height={170}
                 priority
                 onLoad={handleImageLoad}
+                fill
+                sizes="(min-width: 768px) 300px, (min-width: 1280px) 320px, (min-width: 1536px) 340px, 290px"
                 onError={() => setImgSrc("/notFound.svg")}
                 className={`
-                    max-h-[170px]
-                    min-h-[170px]
-                    min-w-[290px]
-                    max-w-[290px]
-                    object-cover
                     transition-all
                     duration-300
-                    ${isParty ? "rounded-b-2xl" : "none"}
+                    ${isParty ? "rounded-b-2xl" : "rounded-b-none"}
+                    ${isImageLoaded ? "z-10" : "-z-10"}
                     ease-in-out
                     group-hover:scale-105
                     group-hover:opacity-20
-                    md:max-h-[180px]
-                    md:min-h-[180px]
-                    md:min-w-[300px]
-                    md:max-w-[300px]
-                    xl:max-h-[190px]
-                    xl:min-h-[190px]
-                    xl:min-w-[320px]
-                    xl:max-w-[320px]
-                    2xl:max-h-[200px]
-                    2xl:min-h-[200px]
-                    2xl:min-w-[340px]
-                    2xl:max-w-[340px]
                 `}
             />
-
             <MovieInformation title={title} isParty={isParty} isProgress={!!progress} />
 
             {progress && showChildren && <ProgressBar progress={progress} />}
