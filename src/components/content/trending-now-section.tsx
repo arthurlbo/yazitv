@@ -1,7 +1,6 @@
 import { api } from "@/lib/api";
 
-import { MoviesData } from "./movies/movie";
-import { MovieCard } from "./movies/movie-card";
+import { MoviesData } from "./movies/types";
 import { MoviesSection } from "./movies/movies-section";
 
 const url = "/trending/all/day?include_adult=false&include_video=false&language=en-US&page=1";
@@ -14,9 +13,5 @@ export const TrendingNowSection = async () => {
         data: { results: movies },
     } = await api.get<MoviesData>(url);
 
-    const moviesList = movies.map((movie) => (
-        <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
-    ));
-
-    return <MoviesSection title="Trending Now" moviesList={moviesList} dataTestId="trending-now-section" />;
+    return <MoviesSection dataTestId="trending-now-section" title="Trending Now" moviesList={movies} />;
 };

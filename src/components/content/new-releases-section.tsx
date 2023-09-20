@@ -1,7 +1,6 @@
 import { api } from "@/lib/api";
 
-import { MoviesData } from "./movies/movie";
-import { MovieCard } from "./movies/movie-card";
+import { MoviesData } from "./movies/types";
 import { MoviesSection } from "./movies/movies-section";
 
 const url = "/movie/upcoming?include_adult=false&include_video=false&language=en-US&page=1";
@@ -14,9 +13,5 @@ export const NewReleasesSection = async () => {
         data: { results: movies },
     } = await api.get<MoviesData>(url);
 
-    const moviesList = movies.map((movie) => (
-        <MovieCard key={movie.id} title={movie.title} backdrop_path={movie.backdrop_path} />
-    ));
-
-    return <MoviesSection title="New Releases" moviesList={moviesList} dataTestId="new-releases-section" />;
+    return <MoviesSection dataTestId="new-releases-section" title="New Releases" moviesList={movies} />;
 };

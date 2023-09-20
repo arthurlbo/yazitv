@@ -4,20 +4,41 @@ import { useRef, useState } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+import { Movie } from "./types";
+import { Genre } from "../parties-section";
+
+import { MovieCard } from "./movie-card";
 import { WrapperButton } from "./wrapper-button";
 
 interface MoviesSectionProps {
     dataTestId?: string;
     title: string;
-    moviesList: JSX.Element[];
+    moviesList: Movie[];
+    progress?: number;
+    genres?: Genre[];
+    isParty?: boolean;
 }
+
+const handleGenres = (genres: Genre[], genreIds: number[]) => {
+    return genreIds.map((genreId) => {
+        const genre = genres.find((genre) => genre.id === genreId);
+        return genre ? genre.name : "";
+    });
+};
 
 /**
  * Component that wraps the movies list in a slider and separates them into sections.
  * @param title - Title of the movies list.
  * @param moviesList - Cards of movies.
  */
-export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionProps) => {
+export const MoviesSection = ({
+    dataTestId,
+    title,
+    moviesList,
+    progress,
+    genres = [],
+    isParty = false,
+}: MoviesSectionProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,7 +96,16 @@ export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionPr
                 className="flex w-full max-w-full items-center justify-between gap-5 overflow-x-scroll scrollbar-none"
                 style={{ scrollBehavior: "smooth" }}
             >
-                {moviesList}
+                {moviesList.map((movie) => (
+                    <MovieCard
+                        key={movie.id}
+                        title={movie.title}
+                        backdrop_path={movie.backdrop_path}
+                        isParty={isParty}
+                        genres={handleGenres(genres, movie.genre_ids)}
+                        progress={progress}
+                    />
+                ))}
             </div>
         </div>
     );
