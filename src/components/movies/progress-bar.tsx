@@ -10,7 +10,7 @@ export const ProgressBar = ({ progress }: ProgressBarProps) => {
     return (
         <div
             data-testid="movie-progress-bar"
-            className="absolute bottom-0 left-0 z-20 h-1 w-full rounded-full bg-tertiary"
+            className="absolute bottom-0 left-0 z-10 h-1 w-full rounded-full bg-tertiary"
         >
             <div
                 role="progressbar"

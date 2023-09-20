@@ -1,4 +1,6 @@
-import { Info, Play } from "lucide-react";
+import { Play } from "lucide-react";
+
+import { InfoButton } from "./info-button";
 import { FavoriteButton } from "./favorite-button";
 
 interface MovieInformationProps {
@@ -42,27 +44,7 @@ export const MovieInformation = ({ title, isParty, isProgress }: MovieInformatio
                 <div className="flex w-full items-center justify-between bg-hover/95 px-4 py-1.5">
                     <h1 className="line-clamp-1 w-72 text-sm font-bold text-primary">{title ?? "Uninformed"}</h1>
                     <div className="flex items-center">
-                        <button
-                            className="
-                            flex
-                            items-center
-                            justify-center
-                            rounded-full
-                            bg-transparent
-                            p-2
-                            transition-all
-                            duration-300
-                            ease-in-out
-                            hover:bg-slate-600
-                            focus:outline-none
-                            focus:ring-2
-                            focus:ring-complementary/80
-                            focus:ring-offset-2
-                            focus:ring-offset-hover/70
-                        "
-                        >
-                            <Info className=" h-5 w-5 text-primary transition-colors duration-200 ease-in-out" />
-                        </button>
+                        <InfoButton />
                         <FavoriteButton />
                     </div>
                 </div>

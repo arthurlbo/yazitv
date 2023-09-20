@@ -24,7 +24,7 @@ export const Party = ({ title, genres }: PartyProps) => {
                 absolute
                 bottom-0
                 left-0
-                z-20
+                z-10
                 flex
                 max-h-[60px]
                 min-h-[60px]

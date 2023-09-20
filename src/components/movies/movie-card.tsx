@@ -8,6 +8,7 @@ import { Party } from "./party";
 import { Skeleton } from "./skeleton";
 import { ProgressBar } from "./progress-bar";
 import { MovieInformation } from "./movie-information";
+
 export interface MovieCardProps {
     title: string;
     isParty?: boolean;
@@ -18,11 +19,11 @@ export interface MovieCardProps {
 
 /**
  * Movie Card Component
+ * @param title - Title of the movie.
+ * @param backdrop_path - Cover of the movie.
+ * @param genres - Genres of the movie.
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param progress - Indicates the progress of the movie if was watched.
- * @param backdrop_path - Cover of the movie.
- * @param title - Title of the movie.
- * @param genres - Genres of the movie.
  */
 export const MovieCard = ({ isParty = false, progress, backdrop_path, title, genres = [] }: MovieCardProps) => {
     const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
@@ -39,36 +40,36 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
     return (
         <div
             className="
-                    group
-                    relative
-                    flex
-                    max-h-[170px]
-                    min-h-[170px]
-                    min-w-[290px]
-                    max-w-[290px]
-                    cursor-pointer
-                    flex-col
-                    items-center
-                    justify-end
-                    overflow-hidden
-                    rounded-xl
-                    bg-hover
-                    transition-all
-                    duration-300
-                    ease-in-out
-                    md:max-h-[180px]
-                    md:min-h-[180px]
-                    md:min-w-[300px]
-                    md:max-w-[300px]
-                    xl:max-h-[190px]
-                    xl:min-h-[190px]
-                    xl:min-w-[320px]
-                    xl:max-w-[320px]
-                    2xl:max-h-[200px]
-                    2xl:min-h-[200px]
-                    2xl:min-w-[340px]
-                    2xl:max-w-[340px]
-                "
+                group
+                relative
+                flex
+                max-h-[170px]
+                min-h-[170px]
+                min-w-[290px]
+                max-w-[290px]
+                cursor-pointer
+                flex-col
+                items-center
+                justify-end
+                overflow-hidden
+                rounded-xl
+                bg-hover
+                transition-all
+                duration-300
+                ease-in-out
+                md:max-h-[180px]
+                md:min-h-[180px]
+                md:min-w-[300px]
+                md:max-w-[300px]
+                xl:max-h-[190px]
+                xl:min-h-[190px]
+                xl:min-w-[320px]
+                xl:max-w-[320px]
+                2xl:max-h-[200px]
+                2xl:min-h-[200px]
+                2xl:min-w-[340px]
+                2xl:max-w-[340px]
+            "
         >
             <Image
                 src={imgSrc}
@@ -82,7 +83,7 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                     transition-all
                     duration-300
                     ${isParty ? "rounded-b-2xl" : "rounded-b-none"}
-                    ${isImageLoaded ? "z-10" : "-z-10"}
+                    ${!isImageLoaded ? "hidden" : "flex"}
                     ease-in-out
                     group-hover:scale-105
                     group-hover:opacity-20
