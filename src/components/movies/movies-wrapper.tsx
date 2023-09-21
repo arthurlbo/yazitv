@@ -4,20 +4,35 @@ import { useRef, useState } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+import { Genre, Movie } from "./types";
+
+import { MovieCard } from "./movie-card";
 import { WrapperButton } from "./wrapper-button";
 
-interface MoviesSectionProps {
-    dataTestId?: string;
+interface MoviesWrapperProps {
     title: string;
-    moviesList: JSX.Element[];
+    isParty: boolean;
+    haveProgress: boolean;
+    moviesList: Movie[];
+    genres: Genre[];
 }
 
+const handleGenres = (genres: Genre[], genreIds: number[]) => {
+    return genreIds.map((genreId) => {
+        const genre = genres.find((genre) => genre.id === genreId);
+        return genre ? genre.name : "";
+    });
+};
+
 /**
- * Component that wraps the movies list in a slider and separates them into sections.
- * @param title - Title of the movies list.
- * @param moviesList - Cards of movies.
+ * Component that wraps the movies list in a slider.
+ * @param title - Title of the movies section.
+ * @param moviesList - List of section's movies.
+ * @param genres - List of movie's genres.
+ * @param haveProgress - Flag that indicates if the movies card should show the progress bar.
+ * @param isParty - Flag that indicates if the section is a party section.
  */
-export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionProps) => {
+export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title }: MoviesWrapperProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -59,7 +74,7 @@ export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionPr
     };
 
     return (
-        <div data-testid={dataTestId || "movies-section"} className="flex w-full flex-col items-start gap-8">
+        <>
             <div className="flex w-full items-center justify-between">
                 <h1 data-testid="movies-section-title" className="pl-1 text-xl font-semibold text-primary md:text-2xl">
                     {title}
@@ -75,8 +90,21 @@ export const MoviesSection = ({ title, moviesList, dataTestId }: MoviesSectionPr
                 className="flex w-full max-w-full items-center justify-between gap-5 overflow-x-scroll scrollbar-none"
                 style={{ scrollBehavior: "smooth" }}
             >
-                {moviesList}
+                {moviesList.map((movie) => (
+                    <MovieCard
+                        key={movie.id}
+                        title={movie.title}
+                        backdrop_path={movie.backdrop_path}
+                        isParty={isParty}
+                        genres={handleGenres(genres, movie.genre_ids)}
+                        progress={haveProgress ? Math.random() * 101 : undefined}
+                        overview={movie.overview}
+                        release_data={movie.release_date}
+                        vote_average={movie.vote_average}
+                        vote_count={movie.vote_count}
+                    />
+                ))}
             </div>
-        </div>
+        </>
     );
 };

@@ -18,15 +18,12 @@ export const FavoriteButton = () => {
                 rounded-full
                 bg-transparent
                 p-2
+                outline-none
                 transition-all
                 duration-300
                 ease-in-out
                 hover:bg-slate-600
-                focus:outline-none
-                focus:ring-2
-                focus:ring-complementary/80
-                focus:ring-offset-2
-                focus:ring-offset-hover/70
+                focus:ring-0
             "
             onClick={() => setIsLiked(!isLiked)}
         >

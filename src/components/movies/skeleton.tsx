@@ -3,6 +3,7 @@ export const Skeleton = () => {
         <div
             data-testid="movie-skeleton"
             className="
+                z-10
                 max-h-[170px]
                 min-h-[170px]
                 min-w-[290px]

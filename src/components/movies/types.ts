@@ -21,3 +21,12 @@ export interface MoviesData {
     total_pages: number;
     total_results: number;
 }
+
+export interface Genre {
+    id: number;
+    name: string;
+}
+
+export interface GenresData {
+    genres: Genre[];
+}

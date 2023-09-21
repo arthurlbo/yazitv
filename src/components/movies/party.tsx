@@ -24,6 +24,7 @@ export const Party = ({ title, genres }: PartyProps) => {
                 absolute
                 bottom-0
                 left-0
+                z-10
                 flex
                 max-h-[60px]
                 min-h-[60px]
@@ -31,7 +32,7 @@ export const Party = ({ title, genres }: PartyProps) => {
                 items-center
                 justify-between
                 rounded-b-xl
-                bg-hover
+                bg-hover/80
                 px-3
                 xl:max-h-[70px]
                 xl:min-h-[70px]
@@ -50,7 +51,7 @@ export const Party = ({ title, genres }: PartyProps) => {
                         src={avatar}
                         alt="avatar"
                         priority
-                        className="h-6 w-6 rounded-full border border-secondary xl:h-7 xl:w-7"
+                        className="h-6 w-6 rounded-full border border-slate-500 xl:h-7 xl:w-7"
                     />
                 ))}
             </div>
