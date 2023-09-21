@@ -11,10 +11,14 @@ import { MovieInformation } from "./movie-information";
 
 export interface MovieCardProps {
     title: string;
-    isParty?: boolean;
-    progress?: number;
+    overview: string;
     backdrop_path: string;
     genres?: string[];
+    progress?: number;
+    isParty?: boolean;
+    release_data: string;
+    vote_average: number;
+    vote_count: number;
 }
 
 /**
@@ -25,7 +29,17 @@ export interface MovieCardProps {
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param progress - Indicates the progress of the movie if was watched.
  */
-export const MovieCard = ({ isParty = false, progress, backdrop_path, title, genres = [] }: MovieCardProps) => {
+export const MovieCard = ({
+    title,
+    overview,
+    backdrop_path,
+    genres = [],
+    isParty = false,
+    progress,
+    release_data,
+    vote_average,
+    vote_count,
+}: MovieCardProps) => {
     const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
     const [imgSrc, setImgSrc] = useState(defaultImgUrl);
@@ -53,7 +67,6 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                 justify-end
                 overflow-hidden
                 rounded-xl
-                bg-hover
                 transition-all
                 duration-300
                 ease-in-out
@@ -82,14 +95,25 @@ export const MovieCard = ({ isParty = false, progress, backdrop_path, title, gen
                 className={`
                     transition-all
                     duration-300
-                    ${isParty ? "rounded-b-2xl" : "rounded-b-none"}
+                    ${isParty ? "rounded-b-xl" : "rounded-b-none"}
                     ${!isImageLoaded ? "hidden" : "flex"}
                     ease-in-out
                     group-hover:scale-105
                     group-hover:opacity-20
                 `}
             />
-            <MovieInformation title={title} isParty={isParty} isProgress={!!progress} />
+
+            <MovieInformation
+                title={title}
+                overview={overview}
+                imgSrc={imgSrc}
+                genres={genres}
+                isParty={isParty}
+                progress={progress}
+                release_data={release_data}
+                vote_average={vote_average}
+                vote_count={vote_count}
+            />
 
             {progress && showChildren && <ProgressBar progress={progress} />}
 

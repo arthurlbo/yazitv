@@ -6,7 +6,13 @@ import { FavoriteButton } from "./favorite-button";
 interface MovieInformationProps {
     title: string;
     isParty: boolean;
-    isProgress: boolean;
+    progress?: number;
+    imgSrc: string;
+    genres: string[];
+    overview: string;
+    release_data: string;
+    vote_average: number;
+    vote_count: number;
 }
 
 /**
@@ -15,7 +21,17 @@ interface MovieInformationProps {
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param isProgress - Indicates if the movie was watched.
  */
-export const MovieInformation = ({ title, isParty, isProgress }: MovieInformationProps) => {
+export const MovieInformation = ({
+    title,
+    isParty,
+    progress,
+    imgSrc,
+    genres,
+    overview,
+    release_data,
+    vote_average,
+    vote_count,
+}: MovieInformationProps) => {
     return (
         <div
             className="
@@ -36,19 +52,54 @@ export const MovieInformation = ({ title, isParty, isProgress }: MovieInformatio
                 group-hover:opacity-100
             "
         >
-            {isParty ? (
-                <div className="absolute right-3 top-2">
+            <div
+                className={`
+                    flex
+                    ${isParty ? "absolute" : "static"}
+                    ${isParty ? "bg-transparent" : "bg-hover/80"}
+                    ${isParty ? "py-0" : "py-1.5"}
+                    ${isParty ? "px-0" : "px-4"}
+                    top-0
+                    w-full
+                    items-center
+                    justify-between
+                `}
+            >
+                <h1
+                    className={`
+                        ${isParty ? "hidden" : "static"}
+                        line-clamp-1
+                        w-72
+                        text-sm
+                        font-bold
+                        text-primary
+                    `}
+                >
+                    {title ?? "Uninformed"}
+                </h1>
+                <div
+                    className={`
+                        ${isParty ? "absolute" : "static"}
+                        right-3
+                        top-2
+                        flex
+                        items-center
+                    `}
+                >
+                    <InfoButton
+                        title={title}
+                        overview={overview}
+                        imgSrc={imgSrc}
+                        genres={genres}
+                        release_data={release_data}
+                        vote_average={vote_average}
+                        vote_count={vote_count}
+                        isParty={isParty}
+                        progress={progress}
+                    />
                     <FavoriteButton />
                 </div>
-            ) : (
-                <div className="flex w-full items-center justify-between bg-hover/95 px-4 py-1.5">
-                    <h1 className="line-clamp-1 w-72 text-sm font-bold text-primary">{title ?? "Uninformed"}</h1>
-                    <div className="flex items-center">
-                        <InfoButton />
-                        <FavoriteButton />
-                    </div>
-                </div>
-            )}
+            </div>
 
             <div
                 className={`
@@ -56,7 +107,7 @@ export const MovieInformation = ({ title, isParty, isProgress }: MovieInformatio
                     ${
                         isParty
                             ? "h-[calc(100%-60px)] xl:h-[calc(100%-70px)] "
-                            : isProgress
+                            : progress
                             ? "h-[calc(100%-1px)]"
                             : "h-full"
                     }

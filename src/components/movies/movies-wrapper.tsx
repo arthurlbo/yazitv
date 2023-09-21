@@ -98,6 +98,10 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
                         isParty={isParty}
                         genres={handleGenres(genres, movie.genre_ids)}
                         progress={haveProgress ? Math.random() * 101 : undefined}
+                        overview={movie.overview}
+                        release_data={movie.release_date}
+                        vote_average={movie.vote_average}
+                        vote_count={movie.vote_count}
                     />
                 ))}
             </div>
