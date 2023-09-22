@@ -1,4 +1,3 @@
-
 <img src="./public/cover.png" alt="readme image" />
 
 ### Hi there! 👋
@@ -10,23 +9,23 @@
 > Under the hood, the codebase reflects a commitment to industry best practices for React and Next.js. We've meticulously dissected the application into reusable components, fostering efficiency, maintainability and end-to-end testing with Cypress to guarantee a seamless and bug-free experience from start to finish.
 >
 > As I don't own Netflix, our movie source was [the movie db api](https://developer.themoviedb.org/reference/intro/getting-started) (God bless them), let's pretend it's a Netflix-level application, okay ? hahahaha
->
+
 ## What is inside?
 
-- [NextJS](https://nextjs.org/docs)
-- [ReactJS](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org)
-- [Tailwind](https://tailwindcss.com/)
-- [Tailwind Scrollbar](https://www.npmjs.com/package/tailwind-scrollbar)
-- [Shadcn/ui](https://ui.shadcn.com/)
-- [Lucide Icons](https://lucide.dev/icons/)
-- [Axios](https://axios-http.com/ptbr/docs/intro)
-- [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started)
-- [Cypress](https://www.cypress.io/)
-- [Eslint](https://eslint.org)
-- [Prettier](https://prettier.io)
-- [Husky](https://github.com/typicode/husky)
-- [Commitlint](https://commitlint.js.org/#/)
+-   [NextJS](https://nextjs.org/docs)
+-   [ReactJS](https://reactjs.org)
+-   [TypeScript](https://www.typescriptlang.org)
+-   [Tailwind](https://tailwindcss.com/)
+-   [Tailwind Scrollbar](https://www.npmjs.com/package/tailwind-scrollbar)
+-   [Shadcn/ui](https://ui.shadcn.com/)
+-   [Lucide Icons](https://lucide.dev/icons/)
+-   [Axios](https://axios-http.com/ptbr/docs/intro)
+-   [TMDB API](https://developer.themoviedb.org/reference/intro/getting-started)
+-   [Cypress](https://www.cypress.io/)
+-   [Eslint](https://eslint.org)
+-   [Prettier](https://prettier.io)
+-   [Husky](https://github.com/typicode/husky)
+-   [Commitlint](https://commitlint.js.org/#/)
 
 ## Getting Started
 
@@ -86,7 +85,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ```
 
 | Folder         | Description                                                               |
-| -------------- | ----------------                                                          |
+| -------------- | ------------------------------------------------------------------------- |
 | **e2e**        | e2e tests in the app                                                      |
 | **app**        | App pages                                                                 |
 | **assets**     | Images and static files for application                                   |
@@ -100,25 +99,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Commands
 
-- `dev`: run development server
-- `build`: creates the production build version
-- `format`: run prettier and eslint in all the files
-- `cypress`: open cypress
-- `test`: run test file
-- `commit`: commit staged changes
+-   `dev`: run development server
+-   `build`: creates the production build version
+-   `format`: run prettier and eslint in all the files
+-   `cypress`: open cypress
+-   `test`: run test file
+-   `commit`: commit staged changes
 
 ## 🎨 Figma prototype
->
+
 > [Ui prototype](https://www.figma.com/file/yzxjhxvefLVnC12xks7GP0/Yazi.tv?type=design&node-id=155%3A1234&mode=design&t=yYi6Ox1iN2DVGQVq-1)
 
 ## Todo
 
-- [ ] **Buy Netflix for this app to become a real platform**
-- [ ] **More information about the movie on hover card**
-- [ ] **Notifications widget**
-- [ ] **Messages widget**
-- [ ] **User's avatar menu**
-- [ ] **Page navigation**
-- [ ] **Search Input**
+-   [ ] **Buy Netflix for this app to become a real platform**
+-   [ ] **More information about the movie on hover card**
+-   [ ] **Notifications widget**
+-   [ ] **Messages widget**
+-   [ ] **User's avatar menu**
+-   [ ] **Page navigation**
+-   [ ] **Search Input**
 
 <p align="center">Made with 🤍 by Arthur</p>

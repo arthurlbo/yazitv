@@ -11,14 +11,10 @@ import { MovieInformation } from "./movie-information";
 
 export interface MovieCardProps {
     title: string;
-    overview: string;
     backdrop_path: string;
     genres?: string[];
     progress?: number;
     isParty?: boolean;
-    release_data: string;
-    vote_average: number;
-    vote_count: number;
 }
 
 /**
@@ -29,17 +25,7 @@ export interface MovieCardProps {
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param progress - Indicates the progress of the movie if was watched.
  */
-export const MovieCard = ({
-    title,
-    overview,
-    backdrop_path,
-    genres = [],
-    isParty = false,
-    progress,
-    release_data,
-    vote_average,
-    vote_count,
-}: MovieCardProps) => {
+export const MovieCard = ({ title, backdrop_path, genres = [], isParty = false, progress }: MovieCardProps) => {
     const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 
     const [imgSrc, setImgSrc] = useState(defaultImgUrl);
@@ -103,17 +89,7 @@ export const MovieCard = ({
                 `}
             />
 
-            <MovieInformation
-                title={title}
-                overview={overview}
-                imgSrc={imgSrc}
-                genres={genres}
-                isParty={isParty}
-                progress={progress}
-                release_data={release_data}
-                vote_average={vote_average}
-                vote_count={vote_count}
-            />
+            <MovieInformation title={title} isParty={isParty} progress={progress} />
 
             {progress && showChildren && <ProgressBar progress={progress} />}
 

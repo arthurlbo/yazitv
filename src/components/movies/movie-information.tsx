@@ -7,12 +7,6 @@ interface MovieInformationProps {
     title: string;
     isParty: boolean;
     progress?: number;
-    imgSrc: string;
-    genres: string[];
-    overview: string;
-    release_data: string;
-    vote_average: number;
-    vote_count: number;
 }
 
 /**
@@ -21,17 +15,7 @@ interface MovieInformationProps {
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param isProgress - Indicates if the movie was watched.
  */
-export const MovieInformation = ({
-    title,
-    isParty,
-    progress,
-    imgSrc,
-    genres,
-    overview,
-    release_data,
-    vote_average,
-    vote_count,
-}: MovieInformationProps) => {
+export const MovieInformation = ({ title, isParty, progress }: MovieInformationProps) => {
     return (
         <div
             className="
@@ -86,17 +70,7 @@ export const MovieInformation = ({
                         items-center
                     `}
                 >
-                    <InfoButton
-                        title={title}
-                        overview={overview}
-                        imgSrc={imgSrc}
-                        genres={genres}
-                        release_data={release_data}
-                        vote_average={vote_average}
-                        vote_count={vote_count}
-                        isParty={isParty}
-                        progress={progress}
-                    />
+                    <InfoButton />
                     <FavoriteButton />
                 </div>
             </div>
