@@ -1,13 +1,11 @@
 import { Play } from "lucide-react";
 
-import { InfoButton } from "./info-button";
+import { MovieCardProps } from "./movie-card";
+
+import { MovieDialog } from "./movie-dialog";
 import { FavoriteButton } from "./favorite-button";
 
-interface MovieInformationProps {
-    title: string;
-    isParty: boolean;
-    progress?: number;
-}
+export type MovieInformationProps = MovieCardProps;
 
 /**
  * Component that displays information about a movie on movie card hover.
@@ -15,7 +13,17 @@ interface MovieInformationProps {
  * @param isParty - Indicates if the movie was watched in the party mode.
  * @param isProgress - Indicates if the movie was watched.
  */
-export const MovieInformation = ({ title, isParty, progress }: MovieInformationProps) => {
+export const MovieInformation = ({
+    title,
+    isParty,
+    progress,
+    backdrop_path,
+    overview,
+    release_date,
+    vote_average,
+    vote_count,
+    genres,
+}: MovieInformationProps) => {
     return (
         <div
             className="
@@ -70,7 +78,17 @@ export const MovieInformation = ({ title, isParty, progress }: MovieInformationP
                         items-center
                     `}
                 >
-                    <InfoButton />
+                    <MovieDialog
+                        backdrop_path={backdrop_path}
+                        title={title || "Uninformed"}
+                        overview={overview || "Uninformed"}
+                        release_date={release_date}
+                        vote_average={vote_average}
+                        vote_count={vote_count}
+                        genres={genres}
+                        isParty={isParty}
+                        progress={progress}
+                    />
                     <FavoriteButton />
                 </div>
             </div>
