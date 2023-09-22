@@ -16,7 +16,7 @@ export const ProgressBar = ({ progress }: ProgressBarProps) => {
                 role="progressbar"
                 aria-label="Progress of the watched movie"
                 aria-valuenow={progress}
-                className="h-1 w-full rounded-full bg-[#E50914]"
+                className="h-1 w-[90%] rounded-full bg-[#E50914]"
                 style={{
                     width: `${progress}%`,
                 }}
