@@ -1,13 +1,14 @@
-import { Star } from "lucide-react";
+import { Download, PartyPopper, Star } from "lucide-react";
 
 import { MovieInformationProps } from "../movie-information";
 
 import { PlayButton } from "./play-button";
 import { CloseButton } from "./close-button";
 import { ProgressBar } from "../progress-bar";
-import { GroupButtons } from "./group-buttons";
+import { TooltipButton } from "./tooltip-button";
 import { TriggerButton } from "./trigger-button";
 import { MovieBackdrop } from "../movie-backdrop";
+import { FavoriteButton } from "../favorite-button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 type MovieDialogProps = MovieInformationProps;
@@ -66,7 +67,11 @@ export const MovieDialog = ({
                                 </div>
                                 <h1 className="text-xl font-bold text-primary">{title}</h1>
                             </div>
-                            <GroupButtons />
+                            <div className="flex items-center gap-3">
+                                <FavoriteButton variant="iconButton" />
+                                <TooltipButton icon={PartyPopper} text="Watch in Party" />
+                                <TooltipButton icon={Download} text="Download" />
+                            </div>
                         </div>
                         <p className="text-md font-normal text-secondary">{overview}</p>
                     </div>

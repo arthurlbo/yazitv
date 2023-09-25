@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Genre, Movie } from "./types";
 
 import { MovieCard } from "./movie-card";
-import { WrapperButton } from "./wrapper-button";
+import { IconButton } from "../ui/icon-button";
 
 interface MoviesWrapperProps {
     title: string;
@@ -80,8 +80,8 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
                     {title}
                 </h1>
                 <div className="hidden items-center gap-3 md:flex">
-                    <WrapperButton dataTestId="next-button" icon={ArrowLeft} handleButtonClick={handlePrevClick} />
-                    <WrapperButton dataTestId="previous-button" icon={ArrowRight} handleButtonClick={handleNextClick} />
+                    <IconButton dataTestId="next-button" icon={ArrowLeft} handleButtonClick={handlePrevClick} />
+                    <IconButton dataTestId="previous-button" icon={ArrowRight} handleButtonClick={handleNextClick} />
                 </div>
             </div>
             <div

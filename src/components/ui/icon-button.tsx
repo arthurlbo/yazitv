@@ -4,6 +4,7 @@ interface IconButtonProps {
     dataTestId?: string;
     icon: LucideIcon;
     haveNotification?: boolean;
+    handleButtonClick?: () => void;
 }
 
 /**
@@ -11,7 +12,12 @@ interface IconButtonProps {
  * @param icon - Icon that will be displayed on the button.
  * @param haveNotification - If the button handles with some interaction that have notifications.
  */
-export const IconButton = ({ dataTestId = "icon-button", icon: Icon, haveNotification = false }: IconButtonProps) => {
+export const IconButton = ({
+    dataTestId = "icon-button",
+    icon: Icon,
+    haveNotification = false,
+    handleButtonClick,
+}: IconButtonProps) => {
     return (
         <button
             data-testid={dataTestId}
@@ -37,6 +43,7 @@ export const IconButton = ({ dataTestId = "icon-button", icon: Icon, haveNotific
                 focus:ring-offset-2
                 focus:ring-offset-background
             "
+            onClick={handleButtonClick}
         >
             <div className="relative">
                 <Icon className="h-5 w-5 text-primary" />

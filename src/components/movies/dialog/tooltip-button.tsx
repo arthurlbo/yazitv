@@ -1,17 +1,13 @@
-"use client";
-
-import { useState } from "react";
-
-import { Heart } from "lucide-react";
+import { LucideIcon } from "lucide-react";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
-/**
- * Button for the user to add a movie to their favorites list.
- */
-export const FavoriteButton = () => {
-    const [isLiked, setIsLiked] = useState(false);
+interface TooltipButtonProps {
+    icon: LucideIcon;
+    text: string;
+}
 
+export const TooltipButton = ({ icon: Icon, text }: TooltipButtonProps) => {
     return (
         <TooltipProvider>
             <Tooltip delayDuration={300}>
@@ -29,30 +25,22 @@ export const FavoriteButton = () => {
                             border
                             border-hover
                             bg-background
-                            outline-none
                             transition-all
                             duration-200
                             hover:-translate-y-1
                             hover:border-tertiary
-                            focus:ring-0
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-complementary/80
+                            focus:ring-offset-2
+                            focus:ring-offset-background
                         "
-                        onClick={() => setIsLiked(!isLiked)}
                     >
-                        <Heart
-                            className={`
-                                h-5
-                                w-5
-                                ${isLiked ? "text-red-500" : "text-primary"}
-                                ${isLiked ? "fill-red-500" : "fill-none"}
-                                transition-colors
-                                duration-200
-                                ease-in-out
-                            `}
-                        />
+                        <Icon className="h-5 w-5 text-primary" />
                     </button>
                 </TooltipTrigger>
                 <TooltipContent>
-                    <span className="text-sm font-normal text-primary">Add to My List</span>
+                    <span className="text-sm font-normal text-primary">{text}</span>
                 </TooltipContent>
             </Tooltip>
         </TooltipProvider>
