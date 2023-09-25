@@ -12,7 +12,6 @@ export interface MovieCardProps {
     isParty?: boolean;
     release_date: string;
     vote_average: number;
-    vote_count: number;
 }
 
 /**
@@ -32,7 +31,6 @@ export const MovieCard = ({
     overview,
     release_date,
     vote_average,
-    vote_count,
 }: MovieCardProps) => {
     return (
         <div
@@ -75,7 +73,6 @@ export const MovieCard = ({
                 backdrop_path={backdrop_path}
                 overview={overview}
                 release_date={release_date}
-                vote_count={vote_count}
                 vote_average={vote_average}
             />
 

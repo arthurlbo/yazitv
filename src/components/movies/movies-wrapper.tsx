@@ -101,7 +101,6 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
                         overview={movie.overview}
                         release_date={movie.release_date}
                         vote_average={movie.vote_average}
-                        vote_count={movie.vote_count}
                     />
                 ))}
             </div>

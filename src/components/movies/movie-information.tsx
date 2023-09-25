@@ -2,7 +2,7 @@ import { Play } from "lucide-react";
 
 import { MovieCardProps } from "./movie-card";
 
-import { MovieDialog } from "./movie-dialog";
+import { MovieDialog } from "./dialog/movie-dialog";
 import { FavoriteButton } from "./favorite-button";
 
 export type MovieInformationProps = MovieCardProps;
@@ -21,7 +21,6 @@ export const MovieInformation = ({
     overview,
     release_date,
     vote_average,
-    vote_count,
     genres,
 }: MovieInformationProps) => {
     return (
@@ -84,7 +83,6 @@ export const MovieInformation = ({
                         overview={overview || "Uninformed"}
                         release_date={release_date}
                         vote_average={vote_average}
-                        vote_count={vote_count}
                         genres={genres}
                         isParty={isParty}
                         progress={progress}
