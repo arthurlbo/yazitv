@@ -77,7 +77,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
     ├── assets
     ├── components
         ├── content
-            ├── movies
+        ├── movies
         ├── main-nav
         ├── ui
     ├── lib
@@ -112,8 +112,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Todo
 
+-   ❎ **More information about the movie on hover card**
 -   [ ] **Buy Netflix for this app to become a real platform**
--   [ ] **More information about the movie on hover card**
 -   [ ] **Notifications widget**
 -   [ ] **Messages widget**
 -   [ ] **User's avatar menu**
