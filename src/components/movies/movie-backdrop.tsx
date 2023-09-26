@@ -12,17 +12,6 @@ interface MovieBackdropProps {
 }
 
 /**
- * Skeleton to show while the image is loading.
- */
-const Skeleton = () => {
-    return (
-        <div data-testid="movie-skeleton" className="z-50 h-full w-full bg-background">
-            <div className="h-full w-full animate-pulse bg-slate-600" />
-        </div>
-    );
-};
-
-/**
  * Component that display the movie's backdrop image.
  * @param backdrop_path - The path to the movie's backdrop image.
  * @param title - Movie's title.
@@ -62,7 +51,11 @@ export const MovieBackdrop = ({ backdrop_path, title, isParty, isInDialog }: Mov
                 `}
             />
 
-            {!isImageLoaded && <Skeleton />}
+            {!isImageLoaded && (
+                <div data-testid="movie-skeleton" className="z-50 h-full w-full bg-background">
+                    <div className="h-full w-full animate-pulse bg-slate-600" />
+                </div>
+            )}
         </>
     );
 };
