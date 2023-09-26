@@ -39,7 +39,9 @@ export const Party = ({ title, genres }: PartyProps) => {
             "
         >
             <div className="flex flex-col items-start">
-                <h1 className="line-clamp-1 max-w-[200px] text-sm font-bold text-primary xl:text-base">{title}</h1>
+                <h1 className="line-clamp-1 max-w-[200px] text-sm font-bold text-primary xl:text-base">
+                    {title ?? "Title not provided"}
+                </h1>
                 <p className="line-clamp-1 max-w-[200px] text-xs font-semibold text-secondary xl:text-sm">
                     {genres.join(", ")}
                 </p>
