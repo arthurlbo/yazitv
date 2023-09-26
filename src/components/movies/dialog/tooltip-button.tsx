@@ -1,12 +1,19 @@
 import { LucideIcon } from "lucide-react";
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+import { TooltipContent } from "../tooltip-content";
 
 interface TooltipButtonProps {
     icon: LucideIcon;
     text: string;
 }
 
+/**
+ * Tooltip Button Component that will be displayed in the dialog.
+ * @param icon - Button's icon.
+ * @param text - Text of the Tooltip.
+ */
 export const TooltipButton = ({ icon: Icon, text }: TooltipButtonProps) => {
     return (
         <TooltipProvider>
@@ -39,9 +46,7 @@ export const TooltipButton = ({ icon: Icon, text }: TooltipButtonProps) => {
                         <Icon className="h-5 w-5 text-primary" />
                     </button>
                 </TooltipTrigger>
-                <TooltipContent>
-                    <span className="text-sm font-normal text-primary">{text}</span>
-                </TooltipContent>
+                <TooltipContent text={text} />
             </Tooltip>
         </TooltipProvider>
     );

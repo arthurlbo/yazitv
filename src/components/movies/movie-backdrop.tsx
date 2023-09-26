@@ -11,6 +11,9 @@ interface MovieBackdropProps {
     isInDialog: boolean;
 }
 
+/**
+ * Skeleton to show while the image is loading.
+ */
 const Skeleton = () => {
     return (
         <div data-testid="movie-skeleton" className="z-50 h-full w-full bg-background">
@@ -19,6 +22,13 @@ const Skeleton = () => {
     );
 };
 
+/**
+ * Component that display the movie's backdrop image.
+ * @param backdrop_path - The path to the movie's backdrop image.
+ * @param title - Movie's title.
+ * @param isParty - Indicates if the movie was watched in party mode.
+ * @param isInDialog - Indicates if the movie is being shown in the dialog (true) or in the card (false).
+ */
 export const MovieBackdrop = ({ backdrop_path, title, isParty, isInDialog }: MovieBackdropProps) => {
     const defaultImgUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
 

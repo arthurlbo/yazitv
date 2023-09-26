@@ -7,7 +7,7 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Genre, Movie } from "./types";
 
 import { MovieCard } from "./movie-card";
-import { IconButton } from "../ui/icon-button";
+import { IconButton } from "@/components/ui/icon-button";
 
 interface MoviesWrapperProps {
     title: string;
@@ -17,6 +17,11 @@ interface MoviesWrapperProps {
     genres: Genre[];
 }
 
+/**
+ * Function to get the movie's genres.
+ * @param genres - List of genres.
+ * @param genreIds - Movie's genres ids.
+ */
 const handleGenres = (genres: Genre[], genreIds: number[]) => {
     return genreIds.map((genreId) => {
         const genre = genres.find((genre) => genre.id === genreId);
@@ -85,22 +90,18 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
                 </div>
             </div>
             <div
-                data-testid="movies-list"
                 ref={containerRef}
+                data-testid="movies-list"
                 className="flex w-full max-w-full items-center justify-between gap-5 overflow-x-scroll scrollbar-none"
                 style={{ scrollBehavior: "smooth" }}
             >
                 {moviesList.map((movie) => (
                     <MovieCard
                         key={movie.id}
-                        title={movie.title}
-                        backdrop_path={movie.backdrop_path}
                         isParty={isParty}
                         genres={handleGenres(genres, movie.genre_ids)}
                         progress={haveProgress ? Math.random() * 101 : undefined}
-                        overview={movie.overview}
-                        release_date={movie.release_date}
-                        vote_average={movie.vote_average}
+                        {...movie}
                     />
                 ))}
             </div>

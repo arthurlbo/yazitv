@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { ChevronRight } from "lucide-react";
 
 import Avatar1 from "@/assets/avatar1.svg";
@@ -6,7 +7,6 @@ import Avatar2 from "@/assets/avatar2.svg";
 import Avatar3 from "@/assets/avatar3.svg";
 
 interface CardProps {
-    id: number;
     name: string;
     avatar: string;
     isOnline?: boolean;
@@ -14,18 +14,15 @@ interface CardProps {
 
 const cardItems: CardProps[] = [
     {
-        id: 1,
         name: "Eva Jones",
         avatar: Avatar1,
     },
     {
-        id: 2,
         name: "Benjamin Smith",
         avatar: Avatar2,
         isOnline: false,
     },
     {
-        id: 3,
         name: "Emma Smith",
         avatar: Avatar3,
     },
@@ -100,8 +97,8 @@ export const Connections = () => {
                 </div>
             </div>
             <div className="flex w-full flex-col gap-3">
-                {cardItems.map((item) => (
-                    <Card key={item.id} {...item} />
+                {cardItems.map((item, index) => (
+                    <Card key={index} {...item} />
                 ))}
             </div>
         </div>

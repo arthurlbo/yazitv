@@ -3,17 +3,21 @@
 import { useState } from "react";
 
 import { Heart } from "lucide-react";
+import { cva } from "class-variance-authority";
 
 import { cn } from "@/utils/shadcn";
-import { cva } from "class-variance-authority";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "../ui/tooltip";
+
+import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+
+import { TooltipContent } from "./tooltip-content";
 
 interface FavoriteButtonProps {
-    variant?: "iconButton" | "default";
+    variant: "iconButton" | "default";
 }
 
 /**
  * Button for the user to add a movie to their favorites list.
+ * @param variant - The button's style variant.
  */
 export const FavoriteButton = ({ variant }: FavoriteButtonProps) => {
     const [isLiked, setIsLiked] = useState(false);
@@ -51,9 +55,7 @@ export const FavoriteButton = ({ variant }: FavoriteButtonProps) => {
                         />
                     </button>
                 </TooltipTrigger>
-                <TooltipContent>
-                    <span className="text-sm font-normal text-primary">Add to My List</span>
-                </TooltipContent>
+                <TooltipContent text="Add to My List" />
             </Tooltip>
         </TooltipProvider>
     );

@@ -9,8 +9,10 @@ interface IconButtonProps {
 
 /**
  * Icon button component.
+ * @param dataTestId - Data test id of the button for E2E tests.
  * @param icon - Icon that will be displayed on the button.
  * @param haveNotification - If the button handles with some interaction that have notifications.
+ * @param handleButtonClick - Function that will be called when the button is clicked.
  */
 export const IconButton = ({
     dataTestId = "icon-button",

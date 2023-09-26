@@ -1,17 +1,21 @@
-import { Play } from "lucide-react";
-
 import { MovieCardProps } from "./movie-card";
 
-import { MovieDialog } from "./dialog/movie-dialog";
+import { MovieDialog } from "./dialog";
+import { PlayButton } from "./play-button";
 import { FavoriteButton } from "./favorite-button";
 
 export type MovieInformationProps = MovieCardProps;
 
 /**
  * Component that displays information about a movie on movie card hover.
- * @param title - Title of the movie.
+ * @param backdrop_path - Path to the movie's cover.
  * @param isParty - Indicates if the movie was watched in the party mode.
- * @param isProgress - Indicates if the movie was watched.
+ * @param overview - Movie's overview.
+ * @param release_date - Movies's release date.
+ * @param title - Movie's title.
+ * @param vote_average - Movie's vote average.
+ * @param genres - Movie's genres.
+ * @param progress - Indicates the progress of the movie if was watched.
  */
 export const MovieInformation = ({
     title,
@@ -87,7 +91,7 @@ export const MovieInformation = ({
                         isParty={isParty}
                         progress={progress}
                     />
-                    <FavoriteButton />
+                    <FavoriteButton variant="default" />
                 </div>
             </div>
 
@@ -106,31 +110,7 @@ export const MovieInformation = ({
                     justify-center
                 `}
             >
-                <button
-                    className="
-                        flex
-                        h-11
-                        w-11
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-gradient-to-r
-                        from-accent
-                        to-complementary
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:shadow-xl
-                        hover:shadow-complementary/50
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-complementary/80
-                        focus:ring-offset-2
-                        focus:ring-offset-hover/80
-                    "
-                >
-                    <Play className="h-5 w-5 fill-primary text-primary" />
-                </button>
+                <PlayButton variant="default" />
             </div>
         </div>
     );

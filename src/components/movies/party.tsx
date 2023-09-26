@@ -51,7 +51,7 @@ export const Party = ({ title, genres }: PartyProps) => {
                         src={avatar}
                         alt="avatar"
                         priority
-                        className="h-6 w-6 rounded-full border border-slate-500 xl:h-7 xl:w-7"
+                        className="h-6 w-6 rounded-full border border-tertiary xl:h-7 xl:w-7"
                     />
                 ))}
             </div>

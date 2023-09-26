@@ -1,7 +1,7 @@
 import { Party } from "./party";
 import { ProgressBar } from "./progress-bar";
-import { MovieInformation } from "./movie-information";
 import { MovieBackdrop } from "./movie-backdrop";
+import { MovieInformation } from "./movie-information";
 
 export interface MovieCardProps {
     title: string;
@@ -16,10 +16,13 @@ export interface MovieCardProps {
 
 /**
  * Movie Card Component
- * @param title - Title of the movie.
- * @param backdrop_path - Cover of the movie.
- * @param genres - Genres of the movie.
+ * @param backdrop_path - Path to the movie's cover.
  * @param isParty - Indicates if the movie was watched in the party mode.
+ * @param overview - Movie's overview.
+ * @param release_date - Movies's release date.
+ * @param title - Movie's title.
+ * @param vote_average - Movie's vote average.
+ * @param genres - Movie's genres.
  * @param progress - Indicates the progress of the movie if was watched.
  */
 export const MovieCard = ({

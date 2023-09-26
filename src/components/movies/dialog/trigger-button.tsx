@@ -1,8 +1,13 @@
 import { Info } from "lucide-react";
 
-import { DialogTrigger } from "@radix-ui/react-dialog";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import { DialogTrigger } from "@/components/ui/dialog";
+import { Tooltip, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
+import { TooltipContent } from "../tooltip-content";
+
+/**
+ * Button that open the dialog.
+ */
 export const TriggerButton = () => {
     return (
         <TooltipProvider>
@@ -29,9 +34,7 @@ export const TriggerButton = () => {
                         </button>
                     </DialogTrigger>
                 </TooltipTrigger>
-                <TooltipContent>
-                    <span className="text-sm font-normal text-primary">Information</span>
-                </TooltipContent>
+                <TooltipContent text="Information" />
             </Tooltip>
         </TooltipProvider>
     );

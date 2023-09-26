@@ -2,6 +2,9 @@ import { X } from "lucide-react";
 
 import { DialogClose } from "@/components/ui/dialog";
 
+/**
+ * Button that closes the Dialog.
+ */
 export const CloseButton = () => {
     return (
         <DialogClose asChild>

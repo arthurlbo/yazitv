@@ -1,6 +1,6 @@
 import { Play, ArrowRight } from "lucide-react";
 
-import { MoviesBanner } from "../ui/movies-banner";
+import { MoviesBanner } from "@/components/ui/movies-banner";
 
 type DayPeriods = "morning" | "afternoon" | "night";
 

@@ -1,7 +1,7 @@
 import { api } from "@/lib/api";
-import { GenresData, MoviesData } from "../movies/types";
 
-import { MoviesWrapper } from "../movies/movies-wrapper";
+import { GenresData, MoviesData } from "@/components/movies/types";
+import { MoviesWrapper } from "@/components/movies/movies-wrapper";
 
 interface MoviesSectionProps {
     id: string;

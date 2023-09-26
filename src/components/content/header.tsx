@@ -1,7 +1,7 @@
 import { Bell, MessageCircle, Search } from "lucide-react";
 
-import { Avatar } from "../ui/avatar";
-import { IconButton } from "../ui/icon-button";
+import { Avatar } from "@/components/ui/avatar";
+import { IconButton } from "@/components/ui/icon-button";
 
 /**
  * Page's header component.

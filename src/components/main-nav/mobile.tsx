@@ -18,6 +18,7 @@ interface ActionButtonProps {
 
 /**
  * Button that handle with some user's interactions in the app (notifications and messages).
+ * @param dataTestId - Data test id of the button for E2E tests.
  * @param label - The label of the button.
  * @param icon - Icon that will be displayed on the button.
  * @param haveNotification - If the user's interaction have notification.

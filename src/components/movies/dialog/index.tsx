@@ -2,17 +2,30 @@ import { Download, PartyPopper, Star } from "lucide-react";
 
 import { MovieInformationProps } from "../movie-information";
 
-import { PlayButton } from "./play-button";
 import { CloseButton } from "./close-button";
-import { ProgressBar } from "../progress-bar";
-import { TooltipButton } from "./tooltip-button";
 import { TriggerButton } from "./trigger-button";
+import { TooltipButton } from "./tooltip-button";
+
+import { PlayButton } from "../play-button";
+import { ProgressBar } from "../progress-bar";
 import { MovieBackdrop } from "../movie-backdrop";
 import { FavoriteButton } from "../favorite-button";
+
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 type MovieDialogProps = MovieInformationProps;
 
+/**
+ * Dialog that shows the movie information.
+ * @param backdrop_path - Path to the movie's cover.
+ * @param isParty - Indicates if the movie was watched in the party mode.
+ * @param overview - Movie's overview.
+ * @param release_date - Movies's release date.
+ * @param title - Movie's title.
+ * @param vote_average - Movie's vote average.
+ * @param genres - Movie's genres.
+ * @param progress - Indicates the progress of the movie if was watched.
+ */
 export const MovieDialog = ({
     backdrop_path,
     isParty = false,
@@ -28,7 +41,22 @@ export const MovieDialog = ({
     return (
         <Dialog>
             <TriggerButton />
-            <DialogContent className="flex h-auto w-full max-w-3xl flex-col items-start justify-between gap-6 overflow-x-hidden rounded-xl bg-background pb-6">
+            <DialogContent
+                className="
+                    flex
+                    h-auto
+                    w-full
+                    max-w-3xl
+                    flex-col
+                    items-start
+                    justify-between
+                    gap-6
+                    overflow-x-hidden
+                    rounded-xl
+                    bg-background
+                    pb-6
+                "
+            >
                 <CloseButton />
                 <div
                     className="
@@ -48,7 +76,7 @@ export const MovieDialog = ({
                     "
                 >
                     <MovieBackdrop backdrop_path={backdrop_path} isInDialog={false} isParty={isParty} title={title} />
-                    <PlayButton />
+                    <PlayButton variant="dialog" />
                     {progress && <ProgressBar width="w-[100%]" progress={progress} />}
                 </div>
                 <div className="flex w-full flex-col items-start gap-6">
