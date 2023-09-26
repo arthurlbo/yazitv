@@ -1,40 +1,14 @@
-import { Party } from "./party";
-import { ProgressBar } from "./progress-bar";
-import { MovieBackdrop } from "./movie-backdrop";
-import { MovieInformation } from "./movie-information";
+import { ReactNode } from "react";
 
 export interface MovieCardProps {
-    title: string;
-    overview: string;
-    backdrop_path: string;
-    genres?: string[];
-    progress?: number;
-    isParty?: boolean;
-    release_date: string;
-    vote_average: number;
+    children: ReactNode;
 }
 
 /**
  * Movie Card Component
- * @param backdrop_path - Path to the movie's cover.
- * @param isParty - Indicates if the movie was watched in the party mode.
- * @param overview - Movie's overview.
- * @param release_date - Movies's release date.
- * @param title - Movie's title.
- * @param vote_average - Movie's vote average.
- * @param genres - Movie's genres.
- * @param progress - Indicates the progress of the movie if was watched.
+ * @param children - Content of the movie card.
  */
-export const MovieCard = ({
-    title,
-    backdrop_path,
-    genres = [],
-    isParty = false,
-    progress,
-    overview,
-    release_date,
-    vote_average,
-}: MovieCardProps) => {
+export const MovieCard = ({ children }: MovieCardProps) => {
     return (
         <div
             className="
@@ -68,22 +42,7 @@ export const MovieCard = ({
                 2xl:max-w-[340px]
             "
         >
-            <MovieInformation
-                title={title}
-                isParty={isParty}
-                progress={progress}
-                genres={genres}
-                backdrop_path={backdrop_path}
-                overview={overview}
-                release_date={release_date}
-                vote_average={vote_average}
-            />
-
-            <MovieBackdrop backdrop_path={backdrop_path} isInDialog={false} isParty={isParty} title={title} />
-
-            {progress && <ProgressBar width="w-[90%]" progress={progress} />}
-
-            {isParty && <Party title={title} genres={genres} />}
+            {children}
         </div>
     );
 };

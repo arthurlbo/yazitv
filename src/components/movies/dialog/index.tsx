@@ -1,7 +1,5 @@
 import { Download, PartyPopper, Star } from "lucide-react";
 
-import { MovieInformationProps } from "../movie-information";
-
 import { CloseButton } from "./close-button";
 import { TriggerButton } from "./trigger-button";
 import { TooltipButton } from "./tooltip-button";
@@ -13,7 +11,16 @@ import { FavoriteButton } from "../favorite-button";
 
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-type MovieDialogProps = MovieInformationProps;
+interface MovieDialogProps {
+    backdrop_path: string;
+    isParty?: boolean;
+    overview: string;
+    release_date: string;
+    title: string;
+    vote_average: number;
+    genres: string[];
+    progress?: number;
+}
 
 /**
  * Dialog that shows the movie information.
@@ -94,10 +101,12 @@ export const MovieDialog = ({
                                 </span>
                             </div>
                             <span className="text-sm font-normal text-hover">|</span>
-                            <span className="text-sm font-normal text-secondary">{releaseYear}</span>
+                            <span className="text-sm font-normal text-secondary">{releaseYear ?? "date"}</span>
                         </div>
-                        <h1 className="w-60 text-xl font-bold text-primary md:w-[550px]">{title}</h1>
-                        <p className="text-md font-normal text-secondary">{overview}</p>
+                        <h1 className="w-60 text-xl font-bold text-primary md:w-[550px]">
+                            {title ?? "Title not provided"}
+                        </h1>
+                        <p className="text-md font-normal text-secondary">{overview ?? "Overview not provided"}</p>
                     </div>
                     <div className="flex flex-col items-start gap-2 px-6 md:flex-row md:items-center">
                         <h1 className="text-md font-medium text-primary">Genres:</h1>

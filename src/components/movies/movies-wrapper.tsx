@@ -1,43 +1,26 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { ReactNode, useRef, useState } from "react";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { Genre, Movie } from "./types";
+import { Movie } from "./types";
 
-import { MovieCard } from "./movie-card";
 import { IconButton } from "@/components/ui/icon-button";
 
 interface MoviesWrapperProps {
-    title: string;
-    isParty: boolean;
-    haveProgress: boolean;
+    sectionTitle: string;
     moviesList: Movie[];
-    genres: Genre[];
+    children: ReactNode;
 }
-
-/**
- * Function to get the movie's genres.
- * @param genres - List of genres.
- * @param genreIds - Movie's genres ids.
- */
-const handleGenres = (genres: Genre[], genreIds: number[]) => {
-    return genreIds.map((genreId) => {
-        const genre = genres.find((genre) => genre.id === genreId);
-        return genre ? genre.name : "";
-    });
-};
 
 /**
  * Component that wraps the movies list in a slider.
  * @param title - Title of the movies section.
+ * @param children - Children components(MovieCard) that will be wrapped in a Slider.
  * @param moviesList - List of section's movies.
- * @param genres - List of movie's genres.
- * @param haveProgress - Flag that indicates if the movies card should show the progress bar.
- * @param isParty - Flag that indicates if the section is a party section.
  */
-export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title }: MoviesWrapperProps) => {
+export const MoviesWrapper = ({ children, moviesList, sectionTitle }: MoviesWrapperProps) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,7 +65,7 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
         <>
             <div className="flex w-full items-center justify-between">
                 <h1 data-testid="movies-section-title" className="pl-1 text-xl font-semibold text-primary md:text-2xl">
-                    {title}
+                    {sectionTitle}
                 </h1>
                 <div className="hidden items-center gap-3 md:flex">
                     <IconButton dataTestId="next-button" icon={ArrowLeft} handleButtonClick={handlePrevClick} />
@@ -95,15 +78,7 @@ export const MoviesWrapper = ({ genres, haveProgress, isParty, moviesList, title
                 className="flex w-full max-w-full items-center justify-between gap-5 overflow-x-scroll scrollbar-none"
                 style={{ scrollBehavior: "smooth" }}
             >
-                {moviesList.map((movie) => (
-                    <MovieCard
-                        key={movie.id}
-                        isParty={isParty}
-                        genres={handleGenres(genres, movie.genre_ids)}
-                        progress={haveProgress ? Math.random() * 101 : undefined}
-                        {...movie}
-                    />
-                ))}
+                {children}
             </div>
         </>
     );

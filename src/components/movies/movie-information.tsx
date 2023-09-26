@@ -1,32 +1,23 @@
-import { MovieCardProps } from "./movie-card";
+import { ReactNode } from "react";
 
-import { MovieDialog } from "./dialog";
 import { PlayButton } from "./play-button";
 import { FavoriteButton } from "./favorite-button";
 
-export type MovieInformationProps = MovieCardProps;
+export type MovieInformationProps = {
+    title: string;
+    progress?: number;
+    isParty?: boolean;
+    children: ReactNode;
+};
 
 /**
  * Component that displays information about a movie on movie card hover.
- * @param backdrop_path - Path to the movie's cover.
- * @param isParty - Indicates if the movie was watched in the party mode.
- * @param overview - Movie's overview.
- * @param release_date - Movies's release date.
  * @param title - Movie's title.
- * @param vote_average - Movie's vote average.
- * @param genres - Movie's genres.
+ * @param children - Children's component(Dialog) that will display more information about the movie.
  * @param progress - Indicates the progress of the movie if was watched.
+ * @param isParty - Indicates if the movie was watched in the party mode.
  */
-export const MovieInformation = ({
-    title,
-    isParty,
-    progress,
-    backdrop_path,
-    overview,
-    release_date,
-    vote_average,
-    genres,
-}: MovieInformationProps) => {
+export const MovieInformation = ({ title, isParty, progress, children }: MovieInformationProps) => {
     return (
         <div
             className="
@@ -70,7 +61,7 @@ export const MovieInformation = ({
                         text-primary
                     `}
                 >
-                    {title ?? "Uninformed"}
+                    {title ?? "Title not provided"}
                 </h1>
                 <div
                     className={`
@@ -81,16 +72,7 @@ export const MovieInformation = ({
                         items-center
                     `}
                 >
-                    <MovieDialog
-                        backdrop_path={backdrop_path}
-                        title={title || "Uninformed"}
-                        overview={overview || "Uninformed"}
-                        release_date={release_date}
-                        vote_average={vote_average}
-                        genres={genres}
-                        isParty={isParty}
-                        progress={progress}
-                    />
+                    {children}
                     <FavoriteButton variant="default" />
                 </div>
             </div>
