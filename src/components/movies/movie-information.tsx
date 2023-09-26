@@ -1,21 +1,23 @@
-import { Play } from "lucide-react";
+import { ReactNode } from "react";
 
-import { InfoButton } from "./info-button";
+import { PlayButton } from "./play-button";
 import { FavoriteButton } from "./favorite-button";
 
-interface MovieInformationProps {
+export type MovieInformationProps = {
     title: string;
-    isParty: boolean;
     progress?: number;
-}
+    isParty?: boolean;
+    children: ReactNode;
+};
 
 /**
  * Component that displays information about a movie on movie card hover.
- * @param title - Title of the movie.
+ * @param title - Movie's title.
+ * @param children - Children's component(Dialog) that will display more information about the movie.
+ * @param progress - Indicates the progress of the movie if was watched.
  * @param isParty - Indicates if the movie was watched in the party mode.
- * @param isProgress - Indicates if the movie was watched.
  */
-export const MovieInformation = ({ title, isParty, progress }: MovieInformationProps) => {
+export const MovieInformation = ({ title, isParty, progress, children }: MovieInformationProps) => {
     return (
         <div
             className="
@@ -59,7 +61,7 @@ export const MovieInformation = ({ title, isParty, progress }: MovieInformationP
                         text-primary
                     `}
                 >
-                    {title ?? "Uninformed"}
+                    {title ?? "Title not provided"}
                 </h1>
                 <div
                     className={`
@@ -70,8 +72,8 @@ export const MovieInformation = ({ title, isParty, progress }: MovieInformationP
                         items-center
                     `}
                 >
-                    <InfoButton />
-                    <FavoriteButton />
+                    {children}
+                    <FavoriteButton variant="default" />
                 </div>
             </div>
 
@@ -90,31 +92,7 @@ export const MovieInformation = ({ title, isParty, progress }: MovieInformationP
                     justify-center
                 `}
             >
-                <button
-                    className="
-                        flex
-                        h-11
-                        w-11
-                        items-center
-                        justify-center
-                        rounded-full
-                        bg-gradient-to-r
-                        from-accent
-                        to-complementary
-                        transition-all
-                        duration-300
-                        hover:-translate-y-1
-                        hover:shadow-xl
-                        hover:shadow-complementary/50
-                        focus:outline-none
-                        focus:ring-2
-                        focus:ring-complementary/80
-                        focus:ring-offset-2
-                        focus:ring-offset-hover/80
-                    "
-                >
-                    <Play className="h-5 w-5 fill-primary text-primary" />
-                </button>
+                <PlayButton variant="default" />
             </div>
         </div>
     );

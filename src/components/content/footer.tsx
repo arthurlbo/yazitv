@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { Github, Instagram, Linkedin } from "lucide-react";
 
-import { IconButton } from "../ui/icon-button";
+import { IconButton } from "@/components/ui/icon-button";
 
 const socialItems = [
     {

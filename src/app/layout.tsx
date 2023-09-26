@@ -32,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     scrollbar-thin
                     scrollbar-thumb-slate-500
                     scrollbar-thumb-rounded-full
+                    selection:bg-accent
                 `}
             >
                 <MainNav />

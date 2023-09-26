@@ -31,45 +31,45 @@ export default function Home() {
 
             <MoviesSection
                 id="continue-watching-section"
-                title="Continue Watching"
+                sectionTitle="Continue Watching"
                 haveProgress
                 apiUrl="/discover/movie?include_adult=false&include_video=false&language=en-US&page=1"
             />
 
             <MoviesSection
                 id="trending-now-section"
-                title="Trending Now"
+                sectionTitle="Trending Now"
                 apiUrl="/trending/all/day?include_adult=false&include_video=false&language=en-US&page=1"
             />
 
             <MoviesSection
                 id="parties-section"
-                title="Parties"
+                sectionTitle="Parties"
                 apiUrl="/discover/movie?include_adult=false&include_video=false&language=en-US&page=2"
                 isParty
             />
 
             <MoviesSection
                 id="my-list-section"
-                title="My List"
+                sectionTitle="My List"
                 apiUrl="/discover/movie?include_adult=false&include_video=false&language=en-US&page=3"
             />
 
             <MoviesSection
                 id="top-picks-section"
-                title="Top Picks for Arthur"
+                sectionTitle="Top Picks for Arthur"
                 apiUrl="/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=2"
             />
 
             <MoviesSection
                 id="new-releases-section"
-                title="New Releases"
+                sectionTitle="New Releases"
                 apiUrl="/movie/upcoming?include_adult=false&include_video=false&language=en-US&page=1"
             />
 
             <MoviesSection
                 id="acclaimed-movies-section"
-                title="Critically Acclaimed Movies"
+                sectionTitle="Critically Acclaimed Movies"
                 apiUrl="/movie/top_rated?include_adult=false&include_video=false&language=en-US&page=1"
             />
 

@@ -6,6 +6,9 @@ import Image from "next/image";
 
 import Banner from "@/assets/banner.svg";
 
+/**
+ * Movies banner that will be displayed in the page's Hero.
+ */
 export const MoviesBanner = () => {
     const [isImageLoaded, setIsImageLoaded] = useState(false);
 
