@@ -79,28 +79,24 @@ export const MovieDialog = ({
                     <PlayButton variant="dialog" />
                     {progress && <ProgressBar width="w-[100%]" progress={progress} />}
                 </div>
-                <div className="flex w-full flex-col items-start gap-6">
+                <div className="relative flex w-full flex-col items-start gap-6">
+                    <div className="absolute right-6 top-0 flex items-center gap-3">
+                        <FavoriteButton variant="iconButton" />
+                        <TooltipButton icon={PartyPopper} text="Watch in Party" />
+                        <TooltipButton icon={Download} text="Download" />
+                    </div>
                     <div className="flex w-full flex-col items-start justify-start gap-4 px-6">
-                        <div className="flex w-full items-start justify-between">
-                            <div className="flex w-full flex-col gap-4">
-                                <div className="flex items-center gap-3">
-                                    <div className="flex items-center gap-1">
-                                        <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                                        <span className="text-sm font-normal text-secondary">
-                                            {parseFloat(vote_average.toFixed(1))}
-                                        </span>
-                                    </div>
-                                    <span className="text-sm font-normal text-hover">|</span>
-                                    <span className="text-sm font-normal text-secondary">{releaseYear}</span>
-                                </div>
-                                <h1 className="text-xl font-bold text-primary">{title}</h1>
+                        <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-1">
+                                <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                                <span className="text-sm font-normal text-secondary">
+                                    {parseFloat(vote_average.toFixed(1))}
+                                </span>
                             </div>
-                            <div className="flex items-center gap-3">
-                                <FavoriteButton variant="iconButton" />
-                                <TooltipButton icon={PartyPopper} text="Watch in Party" />
-                                <TooltipButton icon={Download} text="Download" />
-                            </div>
+                            <span className="text-sm font-normal text-hover">|</span>
+                            <span className="text-sm font-normal text-secondary">{releaseYear}</span>
                         </div>
+                        <h1 className="w-60 text-xl font-bold text-primary md:w-[550px]">{title}</h1>
                         <p className="text-md font-normal text-secondary">{overview}</p>
                     </div>
                     <div className="flex flex-col items-start gap-2 px-6 md:flex-row md:items-center">
