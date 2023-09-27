@@ -79,7 +79,7 @@ export const MovieDialog = ({
                         after:to-transparent
                         after:content-['']
                         md:h-80
-                        xl:h-96
+                        massive:h-96
                     "
                 >
                     <MovieBackdrop backdrop_path={backdrop_path} isInDialog={false} isParty={isParty} title={title} />
