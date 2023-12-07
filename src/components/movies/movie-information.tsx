@@ -84,8 +84,8 @@ export const MovieInformation = ({ title, isParty, progress, children }: MovieIn
                         isParty
                             ? "h-[calc(100%-60px)] xl:h-[calc(100%-70px)] "
                             : progress
-                            ? "h-[calc(100%-1px)]"
-                            : "h-full"
+                              ? "h-[calc(100%-1px)]"
+                              : "h-full"
                     }
                     flex-col
                     items-center
